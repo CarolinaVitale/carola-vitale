@@ -1,0 +1,123 @@
+/* SECTIONS */
+
+section {
+    padding-top: 4vh;
+    height: 96vh;
+    margin: 0 10rem;
+    box-sizing: border-box;
+    min-height: fit-content;
+}
+
+.section-container {
+    display: flex;
+}
+
+/* PROFILE SECTION */
+
+.profile {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    height: 80vh;
+}
+
+.section__pic-container {
+    display: flex;
+    height: 400px;
+    width: 400px;
+    margin: auto 0;
+}
+
+.section__text {
+    align-self: center;
+    text-align: center;
+}
+
+.section__text p {
+    font-family: "Jost 400";
+    letter-spacing: 0.05em;
+}
+
+.section__text__p1-profile {
+    color: black;
+    text-align: center;
+    font-family: "Jost 400";
+    letter-spacing: 0.05em;
+}
+
+.section__text__p2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    font-family: "Jost 400";
+    letter-spacing: 0.05em;
+}
+
+.title-profile {
+    color: gray;
+    font-size: 3rem;
+    text-align: center;
+    font-family: "Jost 700";
+    letter-spacing: 0.05em;
+}
+
+.socials-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 1.5rem;
+}
+
+/* ICONS */
+
+.icon {
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+.fa-linkedin-in,
+.fa-github-alt {
+    color: gray;
+}
+
+
+/* BUTTONS */
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+
+@media screen and (max-width: 768px) {
+    .profile {
+        justify-content: space-around;
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-bottom: 100px;
+    }
+
+    .pic-profile {
+        width: 100vw;
+        object-fit: contain;
+        margin-bottom: 30px;
+    }
+
+    section,
+    .section-container {
+        height: fit-content;
+    }
+
+    section {
+        margin: 0;
+        padding: 0;
+    }
+
+    .section__pic-container {
+        margin: 0;
+        padding: 0;
+    }
+}
