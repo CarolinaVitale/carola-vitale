@@ -15,6 +15,50 @@ function Experience() {
                         <h2 className="experience-sub-title">Web Development</h2>
                         <div className="article-container">
                             <article className='skills'>
+                                <i class="fa-brands fa-js icon fa-2x"></i>
+                                <div>
+                                    <h3>JavaScript</h3>
+                                    <p>Basic</p>
+                                </div>
+                            </article>
+                            
+                            <article className='skills'>
+                                <i class="fa-brands fa-react icon fa-2x"></i>
+                                <div>
+                                    <h3>React JS</h3>
+                                    <p>Intermediate</p>
+                                </div>
+                            </article>
+
+                            <article className='skills'>
+                                <i className="fa-brands fa-node-js icon fa-2x"></i>
+                                <div>
+                                    <h3>Node JS</h3>
+                                    <p>Intermediate</p>
+                                </div>
+                            </article>
+
+                            <article className='skills'>
+                                <img
+                                    src={express}
+                                    alt="Experience icon"
+                                    className="icon"
+                                />
+                                <div>
+                                    <h3>Express JS</h3>
+                                    <p>Intermediate</p>
+                                </div>
+                            </article>
+
+                            <article className='skills'>
+                                <i class="fa-solid fa-database fa-2x"></i>
+                                <div>
+                                    <h3>Mongo DB</h3>
+                                    <p>Basic</p>
+                                </div>
+                            </article>
+
+                            <article className='skills'>
                                 <i className="fa-brands fa-html5 icon fa-2x"></i>
                                 <div>
                                     <h3>HTML</h3>
@@ -28,20 +72,7 @@ function Experience() {
                                     <p>Experienced</p>
                                 </div>
                             </article>
-                            <article className='skills'>
-                                <i class="fa-brands fa-react icon fa-2x"></i>
-                                <div>
-                                    <h3>React JS</h3>
-                                    <p>Intermediate</p>
-                                </div>
-                            </article>
-                            <article className='skills'>
-                                <i class="fa-brands fa-js icon fa-2x"></i>
-                                <div>
-                                    <h3>JavaScript</h3>
-                                    <p>Basic</p>
-                                </div>
-                            </article>
+                            
                             <article className='skills'>
                                 <i class="fa-solid fa-database fa-2x icon"></i>
                                 <div>
@@ -49,36 +80,10 @@ function Experience() {
                                     <p>Basic</p>
                                 </div>
                             </article>
-                       
-                            <article className='skills'>
-                                <i class="fa-solid fa-database fa-2x"></i>
-                                <div>
-                                    <h3>Mongo DB</h3>
-                                    <p>Basic</p>
-                                </div>
-                            </article>
-                            <article className='skills'>
-                                <i className="fa-brands fa-node-js icon fa-2x"></i>
-                                <div>
-                                    <h3>Node JS</h3>
-                                    <p>Intermediate</p>
-                                </div>
-                            </article>
-                            <article className='skills'>
-                                <img
-                                    src={express}
-                                    alt="Experience icon"
-                                    className="icon"
-                                />
-                                <div>
-                                    <h3>Express JS</h3>
-                                    <p>Intermediate</p>
-                                </div>
-                            </article>
+                            
                             <article className='skills'>
                                 <i className="fa-brands fa-github-alt icon-git fa-2x "
                                     onclick="location.href='https://github.com/CarolinaVitale'">
-
                                 </i>
                                 <div>
                                     <h3>Git</h3>
