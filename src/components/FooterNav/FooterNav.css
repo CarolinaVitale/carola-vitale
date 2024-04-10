@@ -1,0 +1,50 @@
+/* FOOTER SECTION */
+
+footer {
+    margin: 0.1 1rem;
+}
+
+.nav-links-footer {
+    text-decoration: none;
+    font-family: "Jost 200";
+    letter-spacing: 0.05em;
+    color: black;
+    size: 14px;
+}
+
+.links-footer {
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    text-align: center;
+    list-style: none;
+}
+
+.container-footer {
+    margin-bottom: 20px;
+}
+
+.links-footer li {
+    text-decoration: none;
+    margin: 10px;
+    padding: 10px;
+}
+
+.nav-links-footer {
+    text-decoration: none;
+    margin: 20px;
+    justify-content: center;
+    text-align: center;
+}
+
+.nav-footer {
+    width: 100%;
+    border-bottom: 0.5px solid gray;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .links-footer {
+        display: block;
+    }
+}

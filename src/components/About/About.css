@@ -4,10 +4,6 @@
     position: relative;
 }
 
-.section__text__p1 {
-    color: gray;
-}
-
 .title-about {
     color: black;
     font-size: 3rem;
@@ -31,7 +27,6 @@
 .about-containers {
     gap: 2rem;
     margin-bottom: 2rem;
-    margin-top: 2rem;
 }
 
 .about-details-container {
@@ -44,14 +39,15 @@
     display: flex;
 }
 
-.about-pic {
-    border-radius: 2rem;
+.arrow-container {
+    position: relative;
 }
 
 .arrow {
     position: absolute;
-    right: -5rem;
-    bottom: 2.5rem;
+    right: 5rem;
+    bottom: 6rem;
+    cursor: pointer;
 }
 
 .details-container {
@@ -93,6 +89,7 @@
     font-family: "Jost 200";
     letter-spacing: 0.05em;
     color: black;
+    text-align: justify;
 }
 
 @media screen and (max-width: 768px) {
@@ -136,13 +133,32 @@
     .about-pic {
         margin-top: 10px;
         margin: 0;
-        width: 100vw;
+        height: 35vh;
         object-fit: contain;
         margin-bottom: 10px;
     }
 
     .section__pic-container {
+        height: 35vh;
+        width: 100%;
         margin: 0;
         padding: 0;
+    }
+
+    .title-about {
+        margin-bottom: 20px;
+    }
+
+    .arrow-container {
+        text-align: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .arrow {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -2rem;
     }
 }
