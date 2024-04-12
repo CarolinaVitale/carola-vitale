@@ -1,0 +1,101 @@
+.form-container {
+    font-family: "Jost 300";
+    letter-spacing: 0.1em;
+    margin: 5% 20%;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.contact-form-motion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-form-motion input:focus,
+.contact-form-motion textarea:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.contact-form-motionm label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form-motion input[type="text"],
+.contact-form-motion input[type="email"],
+.contact-form-motion textarea {
+    font-family: "Jost 300";
+    padding: 20px;
+    margin: 10px;
+    letter-spacing: 0.1em;
+    border: 1px solid #ccc;
+}
+
+.contact-form-motion textarea {
+    height: 100px;
+}
+
+/* b u t t o n */
+.contact-form-motion input[type="submit"] {
+    font-family: "Jost 300";
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+    letter-spacing: 0.1em;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+        transition: all 0.3s ease-out;
+}
+
+.contact-form-motion input[type="submit"]:hover {
+    color: black;
+    background-color: #fff;
+    border: solid 1px black;
+        transition: all 0.3s ease-out;
+}
+
+/* e n d   b u t t o n */
+
+@media (max-width: 768px) {
+    .form-container {
+        margin: 5% 7%;
+        margin-top: 50px;
+        margin-bottom: 100px;
+    }
+}
+
+.success-message {
+    font-family: "Jost 300";
+    letter-spacing: 0.1em;
+    font-weight: bolder;
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 1px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    animation: fadeInOut 0.5s ease-in-out;
+}
+
+@keyframes fadeInOut {
+
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

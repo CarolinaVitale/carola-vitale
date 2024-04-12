@@ -1,29 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import '../About/About.css';
-import profile from '../../images/profile-.png'
+// import profile from '../../images/profile-.png'
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
+import CircleText from '../CircleText/CircleText';
 
 function About() {
 
-    const [experiencePosition, setProjectsPosition] = useState(0);
+    const [projectsPosition, setProjectsPosition] = useState(0);
     const [AnimationRef, AnimationInView] = useInView({ threshold: 0.5 });
     const [AnimationRef2, AnimationInView2] = useInView({ threshold: 0.5 });
     const [AnimationRef3, AnimationInView3] = useInView({ threshold: 0.5 });
     const [AnimationRef4, AnimationInView4] = useInView({ threshold: 0.5 });
 
 
-
     useEffect(() => {
-        const experienceSection = document.getElementById('experience');
-        const position = experienceSection.offsetTop;
+        const projectsSection = document.getElementById('projects');
+        const position = projectsSection.offsetTop;
 
         setProjectsPosition(position);
     }, []);
 
     const handleClick = () => {
         window.scrollTo({
-            top: experiencePosition,
+            top: projectsPosition,
             behavior: 'smooth'
         });
     };
@@ -88,13 +88,13 @@ function About() {
                         animate={{ opacity: AnimationInView3 ? 1 : 0, x: AnimationInView3 ? 0 : 50 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <div className="section__pic-container">
-                            <img
-                                src={profile}
-                                alt="Profile"
-                                className="about-pic"
-                            />
+                        <div className="section__pic-container-about">
+
+                            <CircleText className="about-pic"
+                                text="• ♡ • THIS IS MY PROFILE • ♡ • THIS IS MY PROFILE " />
                         </div>
+
+
                     </motion.div>
 
                 </div>
@@ -102,6 +102,7 @@ function About() {
             <div className='arrow-container'>
                 <i onClick={handleClick} className="fa-solid fa-angles-down fa-2x arrow"></i>
             </div>
+
         </>
     );
 }

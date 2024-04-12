@@ -1,13 +1,36 @@
 /* FOOTER SECTION */
 
-footer {
+.footer {
+    padding: 50px 0 20px;
+    display: flex;
+    border-top: solid 1px gray;
+    ;
     margin: 0.1 1rem;
+    align-items: center;
+    justify-content: center;
 }
 
-footer p {
+.footer p {
     text-align: center;
     color: gray;
     font-family: "Jost 200";
     letter-spacing: 0.05em;
-    margin-bottom: 20px;
+}
+
+.footer-image {
+    width: 140px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 20px 0 10px;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .footer p {
+        margin: 10px;
+    }
 }

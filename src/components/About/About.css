@@ -1,5 +1,3 @@
-/* ABOUT SECTION */
-
 .about {
     position: relative;
 }
@@ -95,13 +93,13 @@
 @media screen and (max-width: 768px) {
 
     .about {
+        margin-top: 90px;
         justify-content: space-around;
         display: block;
         width: 100%;
         height: auto;
         justify-content: center;
     }
-
 
     .about-details-container {
         width: 100%;
@@ -130,16 +128,10 @@
         margin-right: 30px;
     }
 
-    .about-pic {
-        margin-top: 10px;
-        margin: 0;
-        height: 35vh;
-        object-fit: contain;
-        margin-bottom: 10px;
-    }
-
-    .section__pic-container {
-        height: 35vh;
+    .section__pic-container-about {
+        align-items: center;
+        justify-content: center;
+        height: 400px;
         width: 100%;
         margin: 0;
         padding: 0;
@@ -159,6 +151,6 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        bottom: -2rem;
+        bottom: -1em;
     }
 }

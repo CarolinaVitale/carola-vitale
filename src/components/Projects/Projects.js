@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../Projects/Projects.css';
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
+import project1 from '../../images/project1.png'
 
 function Projects() {
 
@@ -53,12 +54,12 @@ function Projects() {
                             <div className="details-container color-container">
                                 <div className="article-container">
                                     <img
-                                        src="./assets/project-1.png"
+                                        src={project1}
                                         alt="Project 1"
                                         className="project-img"
                                     />
                                 </div>
-                                <h2 className="experience-sub-title project-title">Project One</h2>
+                                <h2 className="experience-sub-title project-title">by Miguel Bravo</h2>
                                 <div className="btn-container">
                                     <button
                                         className='btn btn--outline btn--medium'
@@ -80,7 +81,7 @@ function Projects() {
                                         className="project-img"
                                     />
                                 </div>
-                                <h2 className="experience-sub-title project-title">Project Two</h2>
+                                <h2 className="experience-sub-title project-title">ocho trece</h2>
                                 <div className="btn-container">
                                     <button
                                         className='btn btn--outline btn--medium'

@@ -1,0 +1,66 @@
+.circle {
+    top: 40px;
+    position: relative;
+    width: 452px / 2;
+    height: 452px;
+    border-radius: 50%;
+    /* background: #ccc; */
+    display: flex;
+    justify-content: center;
+    
+}
+
+.logo-circle {
+    top: 26px;
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background: url('../../images/profile-.png');
+    background-size: cover;
+    /* filter: brightness(1.5) contrast(1.5); */
+}
+
+.text-circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotateText 18s linear infinite;
+}
+
+@keyframes rotateText {
+    0% {
+        transform: rotate(-360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.text-circle span {
+    position: absolute;
+    left: 50%;
+    font-size: 1em;
+    transform-origin: 0 226px;
+    font-family: "Jost 400";
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .circle {
+        width: 350px / 2;
+        height: 350px;
+    }
+
+    .logo-circle {
+        width: 300px;
+        height: 300px;  
+    }
+
+    .text-circle span {
+        left: 50%;
+        transform-origin: 0 175px;
+    }
+}

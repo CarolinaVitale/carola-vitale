@@ -3,6 +3,12 @@
     position: relative;
 }
 
+.experience-containers {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
 .section__text__p1-experience {
     color: gray;
     text-align: center;
@@ -10,9 +16,10 @@
     letter-spacing: 0.05em;
 }
 
+/* 
 .arrow-container {
     position: relative;
-}
+} */
 
 .title-experience {
     margin-top: 20px;
@@ -39,7 +46,7 @@
     flex-direction: column;
 }
 
-.article-container {
+.experience-article-container {
     display: flex;
     text-align: initial;
     flex-wrap: wrap;
@@ -49,7 +56,7 @@
     align-items: center;
 }
 
-.article-container h3 {
+.experience-article-container h3 {
     margin-top: 10px;
     font-size: 24px;
     font-family: "Jost 400";
@@ -57,24 +64,21 @@
     color: rgb(74, 74, 74);
 }
 
-.article-container p {
+.experience-article-container p {
     font-family: "Jost 300";
     letter-spacing: 0.05em;
     color: black;
 }
 
-.skills {
-    align-items: center;
-}
-
-article {
+.experience-article {
     display: flex;
     width: 13rem;
     gap: 1.5rem;
     align-items: center;
+    align-items: center;
 }
 
-article .icon {
+.experience-article .icon {
     margin-right: 10px;
     cursor: default;
     width: 34px;
@@ -94,5 +98,12 @@ article .icon {
         flex-wrap: wrap;
         flex-direction: column;
         gap: 1rem;
+    }
+
+    .experience-containers {
+        margin-left: 10px;
+        margin-right: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }

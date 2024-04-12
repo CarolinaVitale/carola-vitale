@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 
 function Experience() {
-    const [projectsPosition, setProjectsPosition] = useState(0);
+    const [aboutPosition, setAboutPosition] = useState(0);
 
     const [AnimationRef, AnimationInView] = useInView({ threshold: 0.5 });
     const [AnimationRef1, AnimationInView1] = useInView({ threshold: 0.5 });
@@ -18,18 +18,20 @@ function Experience() {
     const [AnimationRef8, AnimationInView8] = useInView({ threshold: 0.5 });
 
     useEffect(() => {
-        const projectsSection = document.getElementById('projects');
-        const position = projectsSection.offsetTop;
 
-        setProjectsPosition(position);
+        const aboutSection = document.getElementById('about');
+        const position = aboutSection.offsetTop;
+
+        setAboutPosition(position);
     }, []);
 
     const handleClick = () => {
         window.scrollTo({
-            top: projectsPosition,
+            top: aboutPosition,
             behavior: 'smooth'
         });
     };
+
     return (
         <>
             <section id="experience" className='experience'>
@@ -48,10 +50,10 @@ function Experience() {
                 
                 
                     <div className="experience-details-container">
-                        <div className="about-containers">
+                        <div className="experience-containers">
                             <div className="details-container">
                                 {/* <h2 className="experience-sub-title">Web Development</h2> */}
-                                <div className="article-container">
+                                <div className="experience-article-container">
 
                                 <motion.div
                                     ref={AnimationRef1}
@@ -59,7 +61,7 @@ function Experience() {
                                     animate={{ opacity: AnimationInView1 ? 1 : 0, y: AnimationInView1 ? 0 : 50 }}
                                     transition={{ duration: 0.5 }}
                                 >
-                                    <article className='skills'>
+                                    <article className='experience-article'>
                                         <i className="fa-brands fa-js icon fa-2x"></i>
                                         <div>
                                             <h3>JavaScript</h3>
@@ -75,7 +77,7 @@ function Experience() {
                                     animate={{ opacity: AnimationInView2 ? 1 : 0, y: AnimationInView2 ? 0 : 50 }}
                                     transition={{ duration: 0.5 }}
                                 >
-                                    <article className='skills'>
+                                    <article className='experience-article'>
                                         <i className="fa-brands fa-react icon fa-2x"></i>
                                         <div>
                                             <h3>React JS</h3>
@@ -92,7 +94,7 @@ function Experience() {
                                     animate={{ opacity: AnimationInView3 ? 1 : 0, y: AnimationInView3 ? 0 : 50 }}
                                     transition={{ duration: 0.5 }}
                                 >
-                                    <article className='skills'>
+                                    <article className='experience-article'>
                                         <i className="fa-brands fa-node-js icon fa-2x"></i>
                                         <div>
                                             <h3>Node JS</h3>
@@ -108,7 +110,7 @@ function Experience() {
                                     animate={{ opacity: AnimationInView4 ? 1 : 0, y: AnimationInView4 ? 0 : 50 }}
                                     transition={{ duration: 0.5 }}
                                 >
-                                    <article className='skills'>
+                                    <article className='experience-article'>
                                         <img
                                             src={express}
                                             alt="Experience icon"
@@ -128,7 +130,7 @@ function Experience() {
                                     animate={{ opacity: AnimationInView5 ? 1 : 0, y: AnimationInView5 ? 0 : 50 }}
                                     transition={{ duration: 0.5 }}
                                 >
-                                    <article className='skills'>
+                                    <article className='experience-article'>
                                         <i className="fa-solid fa-database icon fa-2x"></i>
                                         <div>
                                             <h3>Mongo DB</h3>
@@ -144,7 +146,7 @@ function Experience() {
                                     animate={{ opacity: AnimationInView6 ? 1 : 0, y: AnimationInView6 ? 0 : 50 }}
                                     transition={{ duration: 0.5 }}
                                 >
-                                    <article className='skills'>
+                                    <article className='experience-article'>
                                         <i className="fa-brands fa-css3-alt icon fa-2x"></i>
                                         <div>
                                             <h3>CSS</h3>
@@ -160,7 +162,7 @@ function Experience() {
                                     animate={{ opacity: AnimationInView7 ? 1 : 0, y: AnimationInView7 ? 0 : 50 }}
                                     transition={{ duration: 0.5 }}
                                 >
-                                    <article className='skills'>
+                                    <article className='experience-article'>
                                         <i className="fa-solid fa-database fa-2x icon"></i>
                                         <div>
                                             <h3>SQL</h3>
@@ -176,7 +178,7 @@ function Experience() {
                                     animate={{ opacity: AnimationInView8 ? 1 : 0, y: AnimationInView8 ? 0 : 50 }}
                                     transition={{ duration: 0.5 }}
                                 >
-                                    <article className='skills'>
+                                    <article className='experience-article'>
                                         <i className="fa-brands fa-github-alt icon-git fa-2x"></i>
                                         <div>
                                             <h3>Git</h3>

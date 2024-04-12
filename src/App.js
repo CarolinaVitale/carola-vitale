@@ -6,6 +6,7 @@ import Navbar from '../src/components/Navbar/Navbar';
 import ScrollToTop from '../src/components/ScrollToTop';
 import Home from '../src/pages/Home'
 import Footer from '../src/components/Footer/Footer';
+import Contact from './pages/Contact';
 
 
 
@@ -17,7 +18,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} exact />
-          {/* <Route path="/about" element={<About />} /> */}
+          <Route path="/contact" element={<Contact />} exact />
         </Routes>
         <Footer />
       </Router>

@@ -101,6 +101,7 @@
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 1;
+        padding-bottom: 1.5rem;
     }
 
     .nav-links {
@@ -109,8 +110,8 @@
         padding-left: 0;
         padding-right: 0;
         text-align: center;
-        padding-top: 1.3rem;
-        padding-bottom: 1.3rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
         width: 100%;
         display: table;
     }
@@ -143,6 +144,4 @@
         font-size: 2rem;
         margin-top: 0.4rem;
     }
-
-
 }

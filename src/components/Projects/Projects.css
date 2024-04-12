@@ -22,11 +22,10 @@
 
 .color-container {
     border-color: rgb(163, 163, 163);
-    background: rgb(250, 250, 250);
 }
 
 .project-img {
-    border-radius: 2rem;
+    border-radius: 0.2rem;
     width: 90%;
     height: 90%;
 }

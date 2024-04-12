@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import About from '../components/About/About'
 import Profile from '../components/Profile/Profile'
 import Experience from '../components/Experience/Experience'
@@ -7,14 +7,14 @@ import Contact from '../components/Contact/Contact';
 import FooterNav from '../components/FooterNav/FooterNav'
 
 function Home() {
-    const [scrollToSection, setScrollToSection] = useState(null);
 
     return (
         <>
-            <Profile setScrollToSection={setScrollToSection}/>
-            <About />
+            <Profile />
+            
             <Experience />
-            <Projects scrollToSection={scrollToSection}/>
+            <About />
+            <Projects />
             <Contact />
             <FooterNav />
         </>
