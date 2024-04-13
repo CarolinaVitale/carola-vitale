@@ -6,7 +6,9 @@ import Navbar from '../src/components/Navbar/Navbar';
 import ScrollToTop from '../src/components/ScrollToTop';
 import Home from '../src/pages/Home'
 import Footer from '../src/components/Footer/Footer';
-import Contact from './pages/Contact';
+import ContactPage from './pages/ContactPage';
+import CV from './pages/CV';
+import CvImage from './pages/CvImage';
 
 
 
@@ -18,7 +20,10 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} exact />
-          <Route path="/contact" element={<Contact />} exact />
+          <Route path="/contact" element={<ContactPage />} exact />
+          <Route path='/cv' element={<CV />} exact />
+          <Route path='/curriculum-vitae' element={<CvImage />} exact />
+
         </Routes>
         <Footer />
       </Router>

@@ -2,7 +2,7 @@ import React from 'react';
 import ContactMe from '../components/ContactForm/ContactForm';
 
 
-function Contact() {
+function ContactPage() {
   
 
     return (
@@ -14,4 +14,4 @@ function Contact() {
     );
 }
 
-export default Contact;
+export default ContactPage;

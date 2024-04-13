@@ -1,0 +1,84 @@
+.curriculum {
+    margin: 50px;
+    font-family: "Jost 200";
+    letter-spacing: 0.1em;
+    margin-bottom: 100px;
+}
+
+.cv-tittle {
+    margin-top: 40px;
+    margin-bottom: 60px;
+    letter-spacing: 0.5em;
+    text-align: center;
+    font-family: "Jost 700";
+}
+
+.cv-skills {
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: "Jost 400";
+}
+
+.cv-profile {
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+.curriculum h3 {
+    font-family: "Jost 700";
+    margin-bottom: 40px;
+    margin-top: 60px;
+    letter-spacing: 0.3em;
+}
+
+.curriculum h2 {
+    color: gray;
+}
+
+.curriculum h4,
+.curriculum h5 {
+    font-family: "Jost 400";
+}
+
+.cv-projects p {
+    text-align: justify;
+}
+
+.cv-pe,
+.cv-projects {
+    margin-bottom: 40px;
+}
+
+.display-flex {
+    display: flex;
+    grid: 1em;
+}
+
+.column-1 {
+    width: 70%;
+    margin-right: 60px;
+}
+
+.for-words {
+    text-align: justify;
+}
+
+.display-flex p {
+    text-align: justify;
+}
+
+@media screen and (max-width: 768px) {
+    .display-flex {
+        flex-direction: column;
+    }
+
+    .column-1 {
+        width: 100%;
+        margin: 0;
+    }
+
+    .curriculum {
+        margin: 20px;
+    }
+
+}

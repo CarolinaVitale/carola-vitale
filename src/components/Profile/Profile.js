@@ -33,15 +33,10 @@ function Profile() {
                     <p className="section__text__p1-profile">Hello, I'm</p>
                     <h1 className="title-profile">CAROLINA VITALE</h1>
                     <p className="section__text__p2">WEB DEVELOPER</p>
+                    
                     <div className="btn-container">
-
+                        <Button buttonSize='btn--medium' buttonStyle='btn--outline' where='/cv' children='VIEW CV'></Button>
                         <Button buttonSize='btn--medium' buttonStyle='btn--outline' where='/contact' children='CONTACT ME'></Button>
-
-                        <button
-                            className='btn btn--outline btn--medium'
-                        >
-                            VIEW CV
-                        </button>
                     </div>
 
                     <div className="socials-container">
