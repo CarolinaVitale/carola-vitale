@@ -1,33 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import '../Projects/Projects.css';
+import React from 'react';
+import '../components/Projects/Projects.css';
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
-import project1 from '../../images/project1.png'
-import project2 from '../../images/project2.png'
-import Button from '../Button/Button'
+import project1 from '../images/project1.png'
+import project2 from '../images/project2.png'
+import Button from '../components/Button/Button'
 
 
-function Projects() {
-
-    const [contactPosition, setProjectsPosition] = useState(0);
-
+function ProjectsPage() {
     const [AnimationRef, AnimationInView] = useInView({ threshold: 0.5 });
     const [AnimationRef2, AnimationInView2] = useInView({ threshold: 0.5 });
-
-
-    useEffect(() => {
-        const contactSection = document.getElementById('contact');
-        const position = contactSection.offsetTop;
-
-        setProjectsPosition(position);
-    }, []);
-
-    const handleClick = () => {
-        window.scrollTo({
-            top: contactPosition,
-            behavior: 'smooth'
-        });
-    };
 
     return (
         <>
@@ -42,7 +24,7 @@ function Projects() {
                     <h1 className="title-project">PROJECTS</h1>
                 </motion.div>
 
-                
+
                 <br /> <br /> <br />
 
 
@@ -85,13 +67,11 @@ function Projects() {
                         </div>
                     </div>
                 </motion.div>
-            
+
             </section>
-            <div className='arrow-container'>
-                <i onClick={handleClick} className="fa-solid fa-angles-down fa-2x arrow"></i>
-            </div>
+           
         </>
     );
 }
 
-export default Projects;
+export default ProjectsPage;

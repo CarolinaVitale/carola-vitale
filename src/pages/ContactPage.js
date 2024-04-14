@@ -1,5 +1,6 @@
 import React from 'react';
 import ContactMe from '../components/ContactForm/ContactForm';
+import Contact from '../components/Contact/Contact';
 
 
 function ContactPage() {
@@ -7,8 +8,8 @@ function ContactPage() {
 
     return (
         <>
+            <Contact />
             <br /> <br /> <br />
-            <h1 className='title-contact' >CONTACT ME</h1>
             <ContactMe />
         </>
     );

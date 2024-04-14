@@ -10,8 +10,8 @@ function Home() {
 
     return (
         <>
+        
             <Profile />
-            
             <Experience />
             <About />
             <Projects />

@@ -5,9 +5,9 @@ import { motion } from 'framer-motion';
 import '../ContactForm/ContactForm.css';
 
 export const ContactUs = () => {
-    const [namePlaceholder, setNamePlaceholder] = useState('NAME');
-    const [emailPlaceholder, setEmailPlaceholder] = useState('EMAIL');
-    const [messagePlaceholder, setMessagePlaceholder] = useState('MESSAGE');
+    const [namePlaceholder, setNamePlaceholder] = useState('NAME *');
+    const [emailPlaceholder, setEmailPlaceholder] = useState('EMAIL *');
+    const [messagePlaceholder, setMessagePlaceholder] = useState('MESSAGE *');
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
     const handleInputChange = (e, setStateFunction, placeholderValue) => {
@@ -32,9 +32,9 @@ export const ContactUs = () => {
             .then(
                 () => {
                     e.target.reset();
-                    setNamePlaceholder('NAME');
-                    setEmailPlaceholder('EMAIL');
-                    setMessagePlaceholder('MESSAGE');
+                    setNamePlaceholder('NAME *');
+                    setEmailPlaceholder('EMAIL *');
+                    setMessagePlaceholder('MESSAGE *');
                     setShowSuccessMessage(true);
                     setTimeout(() => {
                         setShowSuccessMessage(false);
@@ -62,31 +62,31 @@ export const ContactUs = () => {
                         <input
                             type="text"
                             name="user_name"
-                            onChange={(e) => handleInputChange(e, setNamePlaceholder, 'NAME')}
+                            onChange={(e) => handleInputChange(e, setNamePlaceholder, 'NAME *')}
                             placeholder={namePlaceholder}
+                            required
                         />
                         <input
                             type="email"
                             name="user_email"
-                            onChange={(e) => handleInputChange(e, setEmailPlaceholder, 'EMAIL')}
+                            onChange={(e) => handleInputChange(e, setEmailPlaceholder, 'EMAIL *')}
                             placeholder={emailPlaceholder}
+                            required
                         />
                         <textarea
                             name="message"
-                            onChange={(e) => handleInputChange(e, setMessagePlaceholder, 'MESSAGE')}
+                            onChange={(e) => handleInputChange(e, setMessagePlaceholder, 'MESSAGE *')}
                             placeholder={messagePlaceholder}
+                            required
                         />
 
-                        
+                        <input type="submit" value="SEND" />
 
-                            <input type="submit" value="SEND" />
-
-                    
                     </form>
                 </motion.div>
             </div>
 
-            
+
             {showSuccessMessage && (
                 <div className="success-message">
                     Your message has been sent successfully!

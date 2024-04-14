@@ -9,8 +9,9 @@ import Footer from '../src/components/Footer/Footer';
 import ContactPage from './pages/ContactPage';
 import CV from './pages/CV';
 import CvImage from './pages/CvImage';
-
-
+import AboutPage from './pages/AboutPage';
+import ExperiencePage from './pages/ExperiencePage';
+import Projects from './pages/ProjectsPage';
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} exact />
+          <Route path="/about" element={<AboutPage />} exact />
+          <Route path="/experience" element={<ExperiencePage />} exact />
+          <Route path="/projects" element={<Projects />} exact />
           <Route path="/contact" element={<ContactPage />} exact />
           <Route path='/cv' element={<CV />} exact />
           <Route path='/curriculum-vitae' element={<CvImage />} exact />
