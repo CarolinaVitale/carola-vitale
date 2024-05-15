@@ -88,11 +88,9 @@ function About() {
                         animate={{ opacity: AnimationInView3 ? 1 : 0, x: AnimationInView3 ? 0 : 50 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <div className="section__pic-container-about">
 
-                            <CircleText className="about-pic"
-                                text="• ♡ • THIS IS MY PROFILE • ♡ • THIS IS MY PROFILE " />
-                        </div>
+                        <CircleText className="about-pic"
+                            text="• ♡ • THIS IS MY PROFILE • ♡ • THIS IS MY PROFILE " />
 
 
                     </motion.div>

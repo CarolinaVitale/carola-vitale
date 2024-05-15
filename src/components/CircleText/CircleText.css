@@ -1,3 +1,5 @@
+
+
 .circle {
     top: 40px;
     position: relative;
@@ -7,7 +9,6 @@
     /* background: #ccc; */
     display: flex;
     justify-content: center;
-    
 }
 
 .logo-circle {
@@ -22,9 +23,11 @@
 
 .text-circle {
     position: absolute;
+    border-radius: 50%;
     width: 100%;
     height: 100%;
     animation: rotateText 18s linear infinite;
+    transform-style: preserve-3d;
 }
 
 @keyframes rotateText {
@@ -52,11 +55,17 @@
     .circle {
         width: 350px / 2;
         height: 350px;
+        overflow: hidden;
+        margin-bottom: 50px;
+    }
+
+    .text-circle {
+        border-radius: 50%;
     }
 
     .logo-circle {
         width: 300px;
-        height: 300px;  
+        height: 300px;
     }
 
     .text-circle span {
