@@ -74,7 +74,7 @@
 
 @media screen and (max-width: 960px) {
     .navbar.active {
-        background: white;
+        background: linear-gradient(90deg, #ffffff 0%, #f0f0f0 100%);
     }
 
     .NavbarItems {
@@ -94,7 +94,7 @@
     }
 
     .nav-menu.active {
-        background: white;
+        background: linear-gradient(90deg, #ffffff 0%, #f0f0f0 100%);
         left: 0;
         opacity: 1;
         transition: all 0.5s ease;
