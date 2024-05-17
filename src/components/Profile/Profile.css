@@ -15,7 +15,7 @@ section {
 /* PROFILE SECTION */
 
 .profile {
-    margin-top: 15vh;
+    margin-top: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -121,6 +121,7 @@ section {
 
 @media screen and (max-width: 768px) {
     .profile {
+        margin-top: 15vh;
         justify-content: center;
         display: block;
         width: 100%;
