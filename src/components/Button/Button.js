@@ -22,7 +22,7 @@ export const Button = ({
     const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
 
     return (
-        <Link to={where} smooth={true} target={target} className='btn-mobile'>
+        <Link to={where} smooth="true" target={target} className='btn-mobile'>
             <button
                 className={`btn ${checkButtonStyle} ${checkButtonSize}`}
                 onClick={onClick}

@@ -7,7 +7,6 @@ function CircleText({ text }) {
   const chars = text.split(""); // Split the text into characters
 
   return (
-    <div className='circle-container'>
       <div className="circle">
         <div className="logo-circle"></div>
         <div className="text-circle">
@@ -20,10 +19,7 @@ function CircleText({ text }) {
             </span>
           ))}</p>
         </div>
-      </div>
-
-    </div>
-    
+      </div>    
   );
 }
 
