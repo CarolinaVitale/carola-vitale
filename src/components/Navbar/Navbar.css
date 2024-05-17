@@ -1,12 +1,17 @@
+/* navbar.css */
+
 .navbar {
     background-color: transparent;
-    height: 80px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     z-index: 1000;
     font-family: "Jost 300";
     letter-spacing: 0.05em;
@@ -24,7 +29,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80px;
+    height: 100px;
     max-width: 100%;
 }
 
@@ -72,11 +77,12 @@
     display: none;
 }
 
-@media screen and (max-width: 960px) {
-    .navbar.active {
-        background: linear-gradient(90deg, #ffffff 0%, #f0f0f0 100%);
-    }
+@media screen and (max-width: 768px) {
 
+
+}
+
+@media screen and (max-width: 960px) {
     .NavbarItems {
         position: relative;
     }
@@ -87,7 +93,7 @@
         width: 100%;
         height: auto;
         position: absolute;
-        top: 80px;
+        top: 100px;
         left: -100%;
         opacity: 1;
         transition: all 0.5s ease;

@@ -11,7 +11,7 @@ function Navbar() {
     const closeMobileMenu = () => setClick(false);
 
     const changeBackground = () => {
-        if (window.scrollY >= 80) {
+        if (window.scrollY >= 100) {
             setNavbar(true);
         } else {
             setNavbar(false);
