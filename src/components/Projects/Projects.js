@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import project1 from '../../images/project1.png'
 import project2 from '../../images/project2.png'
 import Button from '../Button/Button'
+import ExperienceSlide from '../ExperienceSlide/ExperienceSlide';
 
 
 function Projects() {
@@ -42,17 +43,20 @@ function Projects() {
                     <h1 className="title-project">PROJECTS</h1>
                 </motion.div>
 
-                
+
                 <br /> <br /> <br />
+            </section>
 
+            <ExperienceSlide />
 
+        <section className='web-projects'>
                 <motion.div
                     ref={AnimationRef2}
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: AnimationInView2 ? 1 : 0, y: AnimationInView2 ? 0 : 50 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <div className="experience-details-container">
+                    <div className="projects-details-container">
                         <div className="about-containers">
                             <div className="details-container color-container">
                                 <div className="article-container">
@@ -85,8 +89,12 @@ function Projects() {
                         </div>
                     </div>
                 </motion.div>
+
+        </section>
             
-            </section>
+
+
+
             <div className='arrow-container'>
                 <i onClick={handleClick} className="fa-solid fa-angles-down fa-2x arrow"></i>
             </div>
