@@ -19,7 +19,7 @@ function Contact() {
                 <p className="section__text__p1-contact">GET IN TOUCH</p>
                 <h1 className="title-contact">CONTACT ME</h1>
             </motion.div>
-            
+
             <br /> <br /> <br />
 
 
@@ -33,19 +33,19 @@ function Contact() {
                     <div className="contact-info-container">
                         <a className='contact-a' href="mailto:cvitalerrico@gmail.com">
                             <i className="fa-solid fa-at contact-icon fa-2x"></i>
-                            <p>cvitalerrico@gmail.com</p>
+                        cvitalerrico@gmail.com
                         </a>
                     </div>
 
                     <div className="contact-info-container">
-                        <a className='contact-a' href="https://www.linkedin.com/CarolinaVitale">
+                        <a className='contact-a' href='https://www.linkedin.com/in/carolinavitale/' target='_blank' rel='noopener noreferrer'>
                             <i className="fa-brands fa-linkedin contact-icon fa-2x"></i>
-                            <p>LinkedIn</p>
+                            LinkedIn
                         </a>
                     </div>
                 </div>
             </motion.div>
-            
+
         </section>
     );
 }

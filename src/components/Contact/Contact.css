@@ -43,10 +43,10 @@
     margin: 1rem 0;
 }
 
-.contact-info-container p {
+.contact-info-container a {
     font-family: "Jost 400";
     letter-spacing: 0.05em;
-    font-size: larger;
+    font-size: 20px;
 }
 
 .contact-icon {
