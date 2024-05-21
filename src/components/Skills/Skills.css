@@ -1,0 +1,76 @@
+.skills {
+    margin-top: 150px;
+    margin: 150px 10rem;
+    box-sizing: border-box;
+    min-height: fit-content;
+    font-family: "Jost 300";
+}
+
+.buttons {
+
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.buttons button {
+    font-family: "Jost 400";
+    letter-spacing: 0.05em;
+    font-size: 16px;
+    padding: 16px 24px;
+    background-color: white;
+    color: grey;
+    border: solid 1px gray;
+    cursor: pointer;
+    outline: none;
+}
+
+.buttons button:hover {
+    background-color: black;
+    color: white;
+    border: solid 1px black;
+}
+
+.buttons button.active {
+    background-color: white;
+    color: black;
+    border: solid 1px black;
+}
+
+.skill-box {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 220px;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+}
+
+.skill-box .icon {
+    margin-left: 20px;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.skill-box .content {
+    text-align: center;
+}
+
+.skill-box h3 {
+    height: 50px;
+    margin-bottom: 10px;
+    font-family: "Jost 400";
+    letter-spacing: 0.05em;
+}
+
+.skill-box p {
+    text-align: justify;
+    color: #666;
+}
+
+.skills-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
