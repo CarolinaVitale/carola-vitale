@@ -1,7 +1,38 @@
 /* PROJECTS SECTION */
-
 .projects {
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: fit-content;
+    height: auto;
+}
+
+.projects-containers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    margin: 30px;
+    gap: 30px;
+}
+
+.web-projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 20px;
+}
+
+.projects-details-container {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: solid 1px #ccc;
+        padding: 30px;
 }
 
 .section__text__p1-project {
@@ -20,14 +51,11 @@
     letter-spacing: 0.05em;
 }
 
-.color-container {
-    border-color: rgb(163, 163, 163);
-}
-
 .project-img {
     border-radius: 0.2rem;
-    width: 90%;
-    height: 90%;
+    width: 400px;
+    height: auto;
+    object-fit: contain;
 }
 
 .project-title {
@@ -53,33 +81,37 @@
 @media screen and (max-width: 768px) {
     .projects {
         display: flex;
-        flex-wrap: wrap;
+        align-items: center;
         flex-direction: column;
+        text-align: center;
+        margin: 0;
+        padding: 0;
     }
 
-    .section__text__p1-project{
+    .projects-containers {
+        margin: 0 0 80px 0;
+        padding: 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section__text__p1-project {
         margin-top: 60px;
     }
 
     .web-projects {
-        height: 750px !important;
+        height: auto;
+        padding: 0;
+        margin: 0;
     }
-}
 
-.projects {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    min-height: fit-content;
-    height: 250px;
-}
+    .projects-details-container {
+        padding: 20px;
+        margin: 0;
+        width: 83vw;
+    }
 
-.projects-details-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.web-projects {
-   height: 550px;
+    .project-img {
+        width: 81vw;
+    }
 }

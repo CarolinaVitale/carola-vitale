@@ -4,7 +4,7 @@
      height: auto;
      margin: auto;
      overflow: hidden;
-     margin-bottom: 20px;
+     margin-top: 40px;
  }
 
  .slide-container .slide-track {
@@ -43,9 +43,8 @@
      .slide-container {
          width: 100vw;
          height: auto;
-         margin: auto;
+         margin-bottom: 100px;
          overflow: hidden;
-         margin-bottom: 20px;
      }
 
      .slide-container .slide-track {

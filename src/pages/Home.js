@@ -5,13 +5,11 @@ import Profile from '../components/Profile/Profile'
 import Projects from '../components/Projects/Projects'
 import Contact from '../components/Contact/Contact';
 import FooterNav from '../components/FooterNav/FooterNav'
-import Skill from '../components/Skills/Skills';
 
 function Home() {
 
     return (
         <>
-            <Skill />
             <Profile />
             {/* <Experience /> */}
             <About />

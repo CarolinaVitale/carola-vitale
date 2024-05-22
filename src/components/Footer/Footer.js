@@ -6,7 +6,6 @@ function Footer() {
 
     return (
         <footer className='footer'>
-            
             <p>Copyright &#169; 2023 </p><img alt='logotype' className='footer-image' src={image}></img> <p> All Rights Reserved.</p>
         </footer>
     );
