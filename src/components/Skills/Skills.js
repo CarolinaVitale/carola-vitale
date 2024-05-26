@@ -110,6 +110,9 @@ const Skill = () => {
 
     return (
         <div className="skills">
+            <p className="section__text__p1-project">DISCOVER MY ABILITIES</p>
+            <h1 className="title-project">SKILLS</h1>
+            <br /> <br /> <br />
             <div className="buttons">
                 <button
                     className={currentSkills === 'hardSkills' ? 'active' : ''}

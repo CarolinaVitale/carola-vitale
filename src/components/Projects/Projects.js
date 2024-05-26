@@ -40,7 +40,7 @@ function Projects() {
                     animate={{ opacity: AnimationInView ? 1 : 0, y: AnimationInView ? 0 : -50 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <p className="section__text__p1-project">BROWSE MY RECENT</p>
+                    <p className="section__text__p1-project">EXPLORE MY WORK</p>
                     <h1 className="title-project">PROJECTS</h1>
                 </motion.div>
                 <br /> <br /> <br />

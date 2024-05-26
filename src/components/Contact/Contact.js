@@ -16,7 +16,7 @@ function Contact() {
                 animate={{ opacity: AnimationInView ? 1 : 0, y: AnimationInView ? 0 : -50 }}
                 transition={{ duration: 0.5 }}
             >
-                <p className="section__text__p1-contact">GET IN TOUCH</p>
+                <p className="section__text__p1-contact">REACH OUT TO ME</p>
                 <h1 className="title-contact">CONTACT ME</h1>
             </motion.div>
 
