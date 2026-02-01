@@ -6,7 +6,6 @@ function CV() {
     return (
         <>
             <Curriculum />
-
         </>
     );
 }

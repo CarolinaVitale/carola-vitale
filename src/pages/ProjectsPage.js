@@ -36,6 +36,28 @@ function ProjectsPage() {
             <section className='web-projects'>
                 <div className="projects-containers">
                     <motion.div
+                        ref={AnimationRef3}
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: AnimationInView3 ? 1 : 0, x: AnimationInView3 ? 0 : 50 }}
+                        transition={{ duration: 0.5 }}
+                        className="projects-details-container"
+                    >
+                        <a href='https://souraw.com/' target='_blank' rel='noopener noreferrer'>
+                            <img
+                                src={project2}
+                                alt="Project 2"
+                                className="project-img"
+                            />
+                        </a>
+
+
+                        <h2 className="experience-sub-title project-title">SOURAW</h2>
+                        <div className="btn-container">
+                            <Button buttonSize='btn--medium' buttonStyle='btn--outline' where='https://github.com/CarolinaVitale/ocho-trece' children='GITHUB' target='_blank'></Button>
+                            <Button buttonSize='btn--medium' buttonStyle='btn--outline' where='https://ochotrece.restaurant' children='LIVE DEMO' target='_blank'></Button>
+                        </div>
+                    </motion.div>
+                    <motion.div
                         ref={AnimationRef2}
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: AnimationInView2 ? 1 : 0, x: AnimationInView2 ? 0 : -50 }}
@@ -56,36 +78,12 @@ function ProjectsPage() {
                             <Button buttonSize='btn--medium' buttonStyle='btn--outline' where='https://bymiguelbravo.com' children='LIVE DEMO' target='_blank'></Button>
                         </div>
                     </motion.div>
-
-                    <motion.div
-                        ref={AnimationRef3}
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: AnimationInView3 ? 1 : 0, x: AnimationInView3 ? 0 : 50 }}
-                        transition={{ duration: 0.5 }}
-                        className="projects-details-container"
-                    >
-                        <a href='https://ochotrece.restaurant' target='_blank' rel='noopener noreferrer'>
-                            <img
-                                src={project2}
-                                alt="Project 2"
-                                className="project-img"
-                            />
-                        </a>
-
-
-                        <h2 className="experience-sub-title project-title">ocho trece</h2>
-                        <div className="btn-container">
-                            <Button buttonSize='btn--medium' buttonStyle='btn--outline' where='https://github.com/CarolinaVitale/ocho-trece' children='GITHUB' target='_blank'></Button>
-                            <Button buttonSize='btn--medium' buttonStyle='btn--outline' where='https://ochotrece.restaurant' children='LIVE DEMO' target='_blank'></Button>
-                        </div>
-                    </motion.div>
                 </div>
-
             </section>
 
             <ExperienceSlide />
             <Skill />
-           
+
         </>
     );
 }

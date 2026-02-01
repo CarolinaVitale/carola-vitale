@@ -3,100 +3,177 @@ import '../Curriculum/Curriculum.css'
 
 function Curriculum() {
 
-    return (
-        <>
-            <div className='curriculum'>
+  return (
+    <>
+      <div className='curriculum'>
 
-                <div className='cv-tittle'>
-                    <h1>CAROLINA VITALE</h1>
-                    <h2>WEB DEVELOPER</h2>
-                </div>
+        <div className='cv-tittle'>
+          <h1>CAROLINA VITALE</h1>
+          <h2>Front-End Web Developer</h2>
+        </div>
 
-                <div>
-                    <p className='cv-skills'>JAVASCRIPT  •  REACT.JS  •  NODE.JS  •  EXPRESS.JS  •  MONGODB  •  REST APIs • HTML5  •  CSS3  • SQL • GIT • FIGMA • ENGLISH C1 </p>
-                    <p className='cv-profile'>Full-stack MERN Developer with two years of web development experience and a sales background. I've led projects across sectors including sales, banking, and tourism. My passion for technology merges with adaptability, constantly seeking challenges that demand conceptual and analytical thinking for innovative solutions.</p>
-                </div>
+        <div>
+          <h3>ABOUT ME</h3>
+          <p className='cv-profile'>
+            Front-End Web Developer with a strong UI focus, combining React development with a background in fashion design. I enjoy crafting visually polished and detail-oriented interfaces, where aesthetics, usability and clean code meet. My approach blends creative sensibility with technical rigor and full-stack collaboration experience.
+          </p>
+        </div>
 
-                <div>
-                    <h3>PROJECTS</h3>
-                    <div className='cv-projects'>
-                        <h4>ocho trece</h4>
-                        <h4>https://ochotrece.restaurant/ </h4>
-                        <h4>HTML5 · CSS · JAVASCRIPT· REACT.JS</h4>
-                        <p>Application that captivates visitors with elegant animations and a
-                            seamless experience on any device. It's a standout example of how
-                            creativity and technology merge to anticipate and promote an exciting
-                            culinary experience.</p>
-                    </div>
+        <div className='display-flex'>
+          <h3>PROFESSIONAL EXPERIENCE</h3>
 
-                    <div className='cv-projects'>
-                        <h4>by Miguel Bravo</h4>
-                        <h4>https://byMiguelBravo.com/ </h4>
-                        <h4>HTML5 · CSS · JAVASCRIPT· REACT.JS </h4>
-                        <p>Dynamic and responsive platform meticulously designed to authentically
-                            reflect brand identity, while also highlighting products and services.
-                        </p>
+          <div className='cv-pe'>
+            <h4>Front-End Web Developer</h4>
+            <h5>Personal & Freelance Projects</h5>
+            <h5>Mar 2023 - present</h5>
+            <ul className='experience-list'>
+              <li>Designed and developed responsive, user-focused web interfaces using React and modern CSS.</li>
+              <li>Built component-based architectures and reusable UI patterns following separation of concerns and modular design principles.</li>
+              <li>Integrated front-end applications with REST APIs, handling asynchronous data and state management.</li>
+              <li>Focused on performance optimization, accessibility (a11y), and semantic HTML to ensure clean, maintainable code.</li>
+              <li>Developed and integrated a review system with persistent data storage using Firebase Firestore.</li>
+              <li>Integrated EmailJS to handle contact form submissions and client-side email delivery.</li>
+            </ul>
 
-                    </div>
+            <div className='selectec-work'>
+              <h4>Selected Work:</h4>
+              <h5>
+                <a
+                  href="https://www.carolavitale.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  carolavitale.com — Personal Portfolio
+                </a>
+              </h5>
+              <p>Tech Stack: React · JavaScript · HTML5 · CSS3 · Responsive Design · UI/UX · EmailJS</p>
 
-                    <div className='for-words'>
-                        <h4>For Words</h4>
-                        <h4>https://for-words.herokuapp.com/</h4>
-                        <h4>HTML5 · CSS · JAVASCRIPT· REACT.JS · REST APIs · EXPRESS.JS · NODE.JS · MONGODB</h4>
-                        <p>App where you can give your unused items a new purpose (donate).</p>
-                    </div>
+              <h5>
+                <a
+                  href="https://www.souraw.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  souraw.com — Artisanal bakery & brand website
+                </a>
+              </h5>
+              <p>Tech Stack: React · JavaScript · HTML5 · CSS3 · Responsive Design · UI/UX  · Firebase (Firestore)</p>
 
-                </div>
+              <h5>
+                <a
+                  href="https://www.bymiguelbravo.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  bymiguelbravo.com — Restaurant & chef website
+                </a>
+              </h5>
+              <p>Tech Stack: React · JavaScript · HTML5 · CSS3 · Responsive Design · UI/UX · Animations & Motion: Framer Motion</p>
+            </div>
 
-                <div className='display-flex'>
-                    <div className='column-1'>
-                        <h3>PROFESSIONAL EXPERIENCE</h3>
-                        <div className='cv-pe'>
-                            <h4>Santander Start Program</h4>
-                            <h5>Santander Global T&O | Financial Services</h5>
-                            <h5>Apr 2022 - Present</h5>
-                            <p>Analysed current information structure of all existing tools and defined the necessary infrastructure for the project.</p>
-                            <p>Tool programming and screen design management and selected the most optimal language for the project.</p>
-                            <p>Defined the online historical reporting and user module.</p>
+            <div className='cv-pe'>
+              <h4>Santander Start Program</h4>
+              <h5>Santander Global T&O | Financial Services</h5>
+              <h5>Apr 2022 - Oct 2022</h5>
+              <ul className='experience-list'>
+                <li>Contributed to the design and development of an internal inventory management application built from scratch.</li>
+                <li>Worked with large datasets using Python and SQL, managing application logic and database interactions.</li>
+                <li>Collaborated with cross-functional teams in a corporate environment to deliver scalable and maintainable solutions.</li>
+                <li>Participated in Agile development cycles (Scrum), including sprint planning, daily stand-ups, and reviews.</li>
+                <li>Applied software development best practices to ensure code quality and long-term scalability.</li>
+                <li>Collaborated with design tools such as Figma, applying design systems, consistent spacing, and visual hierarchy best practices.</li>
+              </ul>
 
-                        </div>
+              <div className='selectec-work'>
+                <p>Tech Stack: Python · SQL · Relational Databases</p>
+              </div>
+            </div>
 
-                        <div>
-                            <h4>Corporate Sales Executive</h4>
-                            <h5>Global Exchange Group | Currencies Expert</h5>
-                            <h5>Feb 2020 – Mar 2022</h5>
-                            <p>Find common ground with customers to reach agreement on sale terms, consolidated customer acquisitions by 20%. </p>
-                            <p>Led training programs overseeing all aspects of the products, virtual platforms and services.</p>
-                            <p>Supplied superior customer service training and presentations to external and internal stakeholders, efficiently coordinating relations efforts.</p>
-                        </div>
+            <div className='cv-pe'>
+              <h4>Corporate Sales Executive</h4>
+              <h5>Global Exchange Group | Currencies Expert</h5>
+              <h5>Feb 2020 — Mar 2022</h5>
+              <ul className='experience-list'>
+                <li>Led and implemented a remote sales initiative, contributing to a 20% increase in customer acquisition.</li>
+                <li>Maintained direct communication with clients, partner agencies and business stakeholders, building long-term relationships and aligning commercial objectives.</li>
+                <li>Trained and mentored sales agents and external partners, delivering product, platform and service training.</li>
+                <li>Coordinated cross-team efforts and defined performance objectives for distributed sales teams.</li>
+                <li>Improved agency performance and success rates by 35–45% through continuous follow-up, process optimization and communication.</li>
+              </ul>
+            </div>
 
-                    </div>
+          </div>
 
-                    <div className='column-2'>
-                        <h3>EDUCATION</h3>
+          <div>
+            <h3>EDUCATION</h3>
 
-                        <h4>Web Development Bootcamp</h4>
-                        <h4>2021</h4>
-                        <p>Ironhack</p>
-                        <br />
-                        <h4>Digital Marketing Specialist for Luxury Brand</h4>
-                        <h4>2020</h4>
-                        <p>Conde Nast College Spain</p>
-                        <br />
-                        <h4>Master in Marketing and Sales Management</h4>
-                        <h4>2020</h4>
-                        <p>EAE Business School</p>
-                        <br />
-                        <h4>Fashion Designer</h4>
-                        <h4>2013</h4>
-                        <p>Centro Instituto de Diseño Gráfico (CIDIG)</p>
-                    </div>
+            <div className="education">
 
-                </div>
+              <div className="edu-item">
+                <span className="edu-title">Web Development Bootcamp</span>
+                <span className="edu-year">2021</span>
+                <span className="edu-school">Ironhack</span>
+              </div>
+
+              <div className="edu-item">
+                <span className="edu-title">Digital Marketing Specialist for Luxury Brand</span>
+                <span className="edu-year">2020</span>
+                <span className="edu-school">Condé Nast College Spain</span>
+              </div>
+
+              <div className="edu-item">
+                <span className="edu-title">Master in Marketing and Sales Management</span>
+                <span className="edu-year">2020</span>
+                <span className="edu-school">EAE Business School</span>
+              </div>
+
+              <div className="edu-item">
+                <span className="edu-title">Fashion Designer</span>
+                <span className="edu-year">2013</span>
+                <span className="edu-school">Centro Instituto de Diseño Gráfico (CIDIG)</span>
+              </div>
 
             </div>
-        </>
-    );
+          </div>
+        </div>
+      </div>
+
+      <div className='cv-footer'>
+
+        <div className='cv-languages'>
+          <h3>LANGUAGES</h3>
+          <p> Spanish | English  | Italian </p>
+        </div>
+
+        <div className='cv-right'>
+            <a
+              href="https://www.carolavitale.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Portfolio: carolavitale.com
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/carolinavitale"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn: linkedin.com/in/carolinavitale
+            </a>
+
+            <a
+              href="https://github.com/carolinavitale"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub: github.com/carolinavitale
+            </a>
+          
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default Curriculum;

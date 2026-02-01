@@ -56,7 +56,7 @@ function AboutPage() {
                         >
                             <div className="text-container">
                                 <p>
-                                    Full-stack MERN Developer with two years of web development experience and a sales background. I've led projects across sectors including sales, banking, and tourism. My passion for technology merges with adaptability, constantly seeking challenges that demand conceptual and analytical thinking for innovative solutions.
+                                    Front-End Web Developer with a strong UI focus, combining React development with a background in fashion design. I enjoy crafting visually polished and detail-oriented interfaces, where aesthetics, usability and clean code meet. My approach blends creative sensibility with technical rigor and full-stack collaboration experience.
                                 </p>
                             </div>
                         </motion.div>
