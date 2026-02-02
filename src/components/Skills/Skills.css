@@ -25,14 +25,14 @@
 }
 
 .buttons button:hover {
-    background-color: black;
+    background-color: grey;
     color: white;
     border: solid 1px black;
 }
 
 .buttons button.active {
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
     border: solid 1px black;
 }
 

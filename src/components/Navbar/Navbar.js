@@ -68,6 +68,16 @@ function Navbar() {
                                 CONTACT
                             </Link>
                         </li>
+                        <li className='nav-item'>
+                            <Link
+                                to='/cv'
+                                className='nav-links'
+                                onClick={closeMobileMenu}
+                            >
+                                CURRICULUM VITAE
+                            </Link>
+                        </li>
+
                     </ul>
                 </div>
             </nav>
