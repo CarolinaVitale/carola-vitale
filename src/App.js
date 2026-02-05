@@ -27,7 +27,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} exact />
           <Route path='/cv' element={<CV />} exact />
           <Route path='/curriculum-vitae' element={<CvImage />} exact />
-
+          <Route path='*' element={<Home />} />
         </Routes>
         <Footer />
       </Router>

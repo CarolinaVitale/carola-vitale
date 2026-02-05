@@ -206,7 +206,6 @@
         background: #fff !important;
     }
 
-    /* Oculta navegación / UI */
     nav,
     header,
     footer,
@@ -216,7 +215,6 @@
         display: none !important;
     }
 
-    /* Colores consistentes en PDF */
     * {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
@@ -255,15 +253,15 @@
         break-after: avoid-page !important;
     }
 
-    .cv-pe {
-        margin-top: 8px !important;
+    .cv-pe, .selectec-work {
+        margin-top: 6px !important;
         margin-bottom: 4px !important;
     }
 
     h3,
     .cv-contact {
-        margin-top: 10px !important;
-        margin-bottom: 5px !important;
+        margin-top: 6px !important;
+        margin-bottom: 4px !important;
     }
 
     p {
@@ -279,79 +277,15 @@
         font-size: 9.8pt !important;
     }
 
-    @media print {
-
-        /* Compactar bloques generales */
-        .cv-pe {
-            margin-top: 6px !important;
-            margin-bottom: 10px !important;
-        }
-
-        /* Quitar márgenes default de listas y hacerlas más compactas */
-        .experience-list {
-            margin: 6px 0 0 0 !important;
-            /* antes: por defecto suele ser grande */
-            padding: 0 !important;
-        }
-
-        .experience-list li {
-            margin: 0 0 2px 0 !important;
-            /* separacion entre bullets */
-            padding-left: 18px !important;
-            /* menos indent */
-        }
-
-        .experience-list li::before {
-            left: 0 !important;
-            top: 0.2rem !important;
-            font-size: 0.65rem !important;
-        }
-
-        /* Selected work estaba dejando un “aire” enorme */
-        .selectec-work {
-            margin-top: 6px !important;
-            margin-left: 16px !important;
-            margin-bottom: 10px !important;
-        }
-
-        .selectec-work h4 {
-            margin-top: 6px !important;
-            margin-bottom: 4px !important;
-        }
-
-        .selectec-work h5 {
-            margin: 2px 0 !important;
-        }
-
-        .selectec-work p {
-            margin: 0 0 4px 0 !important;
-        }
-
-        /* Footer: quita los márgenes gigantes para print */
-        .cv-footer {
-            width: 100% !important;
-            margin-top: 14px !important;
-            margin-bottom: 0 !important;
-            gap: 12px !important;
-            align-items: flex-start !important;
-        }
-
-        .cv-footer h3 {
-            margin-bottom: 6px !important;
-        }
-
-        .cv-languages p,
-        .cv-right a {
-            line-height: 1.3 !important;
-        }
-
-        /* Deja que el navegador pueda cortar si necesita (evita “huecos”) */
-        .cv-pe,
-        .selectec-work,
-        .experience-list {
-            break-inside: auto !important;
-            page-break-inside: auto !important;
-        }
+    .cv-footer {
+        width: 100% !important;
+        margin-top: 6px !important;
+        margin-bottom: 0 !important;
+        gap: 12px !important;
+        align-items: flex-start !important;
     }
-
+    .cv-languages p,
+    .cv-right a {
+        line-height: 1.3 !important;
+    }
 }

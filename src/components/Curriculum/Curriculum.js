@@ -15,8 +15,7 @@ function Curriculum() {
         <div>
           <h3>ABOUT ME</h3>
           <p className='cv-profile'>
-            Front-End Web Developer with a strong UI focus, combining React development with a background in fashion design. I enjoy crafting visually polished and detail-oriented interfaces, where aesthetics, usability and clean code meet. My approach blends creative sensibility with technical rigor and full-stack collaboration experience.
-          </p>
+          Front-End Developer specialized in building responsive, user-centered interfaces using React and modern JavaScript. Strong focus on clean, scalable component-based architectures, accessibility, and performance. With a background in fashion design, I bring a strong visual and UX sensibility, collaborating closely with design and product teams to translate requirements into high-quality front-end solutions.  </p>
         </div>
 
         <div className='display-flex'>
@@ -57,7 +56,7 @@ function Curriculum() {
                   souraw.com — Artisanal bakery & brand website
                 </a>
               </h5>
-              <p>Tech Stack: React · JavaScript · HTML5 · CSS3 · Responsive Design · UI/UX  · Firebase (Firestore)</p>
+              <p>Tech Stack: React · JavaScript · HTML5 · CSS3 · Responsive Design · UI/UX  · Firebase (Firestore) · REST APIs</p>
 
               <h5>
                 <a
@@ -85,7 +84,7 @@ function Curriculum() {
               </ul>
 
               <div className='selectec-work'>
-                <p>Tech Stack: Python · SQL · Relational Databases</p>
+                <p>Tech Stack: JavaScript · HTML5 · CSS3 · Python · SQL · Relational Databases</p>
               </div>
             </div>
 
@@ -142,7 +141,7 @@ function Curriculum() {
 
         <div className='cv-languages'>
           <h3>LANGUAGES</h3>
-          <p> Spanish | English  | Italian </p>
+          <p>Spanish (Native) | English (Advanced) | Italian (Intermediate)</p>
         </div>
 
         <div className='cv-right'>

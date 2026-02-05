@@ -104,7 +104,6 @@ const Skill = () => {
     const [currentSkills, setCurrentSkills] = useState('hardSkills');
 
     const handleSkillsChange = (skillsType) => {
-        console.log('cambio de habilidades', skillsType);
         setCurrentSkills(skillsType);
     };
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../Navbar/Navbar.css';
 import logo from '../../images/CV-logo.png'
@@ -17,8 +17,10 @@ function Navbar() {
             setNavbar(false);
         }
     }
-
-    window.addEventListener('scroll', changeBackground)
+    useEffect(() => {
+        window.addEventListener('scroll', changeBackground);
+        return () => window.removeEventListener('scroll', changeBackground);
+    }, []);
 
     return (
         <>
@@ -41,15 +43,16 @@ function Navbar() {
                                 ABOUT
                             </Link>
                         </li>
-                        {/* <li className='nav-item'>
+                        <li className='nav-item'>
                             <Link
-                                to='/experience'
+                                to='/cv'
                                 className='nav-links'
                                 onClick={closeMobileMenu}
                             >
-                                EXPERIENCE
+                                RESUME
                             </Link>
-                        </li> */}
+                        </li>
+                        
                         <li className='nav-item'>
                             <Link
                                 to='/projects'
