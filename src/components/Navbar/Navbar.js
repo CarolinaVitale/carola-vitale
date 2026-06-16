@@ -43,7 +43,7 @@ function Navbar() {
                                 ABOUT
                             </Link>
                         </li>
-                        <li className='nav-item'>
+                        {/* <li className='nav-item'>
                             <Link
                                 to='/cv'
                                 className='nav-links'
@@ -51,7 +51,7 @@ function Navbar() {
                             >
                                 RESUME
                             </Link>
-                        </li>
+                        </li> */}
                         
                         <li className='nav-item'>
                             <Link
