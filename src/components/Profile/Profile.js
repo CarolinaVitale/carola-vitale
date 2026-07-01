@@ -35,7 +35,7 @@ function Profile() {
                     <p className="section__text__p2">WEB DEVELOPER</p>
                     
                     <div className="btn-container">
-                        <Button buttonSize='btn--medium' buttonStyle='btn--outline' where='/cv' children='VIEW CV'></Button>
+                        <Button buttonSize='btn--medium' buttonStyle='btn--outline' where='/resume' children='VIEW CV'></Button>
                         <Button buttonSize='btn--medium' buttonStyle='btn--outline' where='/contact' children='CONTACT ME'></Button>
                     </div>
 

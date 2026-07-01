@@ -1,0 +1,390 @@
+@font-face {
+    font-family: "Jost 300";
+    src: url("../../fonts/Jost-300-Light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Jost 700";
+    src: url("../../fonts/Jost-700-Bold.otf") format("opentype");
+}
+
+.resumePage,
+.resumeSheet,
+.resumeSection,
+.resumeIntro {
+    height: auto !important;
+    min-height: auto !important;
+}
+
+.resumePage {
+    min-height: 100vh !important;
+    padding: 40px 18px;
+    background: #f7f5f0;
+    color: #3f3f3f;
+    font-family: "Jost 300", Arial, sans-serif;
+    letter-spacing: 0.015em;
+}
+
+.resumeSheet {
+    width: min(920px, 100%);
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 62px 72px 54px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.08);
+}
+
+.resumeHero {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 42px;
+    align-items: end;
+    padding-bottom: 28px;
+    border-bottom: 1px solid #e6e2dc;
+}
+
+.resumeLogo {
+    width: 32px;
+    height: auto;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.resumeHero h1 {
+    margin: 0;
+    font-family: "Jost 700", Arial, sans-serif;
+    font-size: clamp(78px, 10vw, 112px);
+    line-height: 0.76;
+    letter-spacing: -0.055em;
+    text-transform: uppercase;
+    color: #101010;
+}
+
+.resumeTagline {
+    max-width: 560px;
+    margin: 26px 0 0;
+    font-size: 17px;
+    line-height: 1.45;
+    color: #4a4a4a;
+}
+
+.resumeContact {
+    display: grid;
+    gap: 7px;
+    font-size: 11px;
+    line-height: 1.35;
+    color: #707070;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.resumeContact a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+}
+
+.resumeIntro {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 40px;
+    padding: 22px 0;
+    border-bottom: 1px solid #e6e2dc;
+}
+
+.resumeSection {
+    padding: 18px 0;
+    border-bottom: 1px solid #e6e2dc;
+}
+
+.resumeSection h2,
+.resumeIntro h2 {
+    margin: 0;
+    font-family: "Jost 700", Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #777;
+}
+
+.resumeIntro p {
+    max-width: 700px;
+    margin: 0 0 7px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.resumeExperience {
+    margin-top: 14px;
+}
+
+.resumeJob {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 40px;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #efebe5;
+}
+
+.resumeJob:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.resumeJobMeta span {
+    display: block;
+    font-family: "Jost 700", Arial, sans-serif;
+    font-size: 10px;
+    line-height: 1.25;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #111;
+}
+
+.resumeJobMeta small {
+    display: block;
+    margin-top: 7px;
+    font-size: 10px;
+    line-height: 1.35;
+    color: #777;
+}
+
+.resumeJobContent h3 {
+    margin: 0 0 6px;
+    font-family: "Jost 700", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.2;
+    color: #111;
+}
+
+.resumeJobIntro {
+    margin: 0 0 6px;
+    font-size: 12px;
+    line-height: 1.38;
+}
+
+.resumeJobContent ul {
+    margin: 0;
+    padding-left: 15px;
+}
+
+.resumeJobContent li {
+    margin-bottom: 3px;
+    font-size: 11.2px;
+    line-height: 1.35;
+}
+
+.resumeWork {
+    display: flex;
+    gap: 22px;
+    margin-top: 14px;
+}
+
+.resumeWork a {
+    flex: 1;
+    color: inherit;
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    border-top: 1px solid #ded9d1;
+}
+
+.resumeWork h3 {
+    margin: 0 0 7px;
+    font-family: "Jost 700", Arial, sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #111;
+}
+
+.resumeWork p {
+    min-height: auto;
+    margin: 0 0 10px;
+    font-size: 10.6px;
+    line-height: 1.35;
+}
+
+.resumeWork small {
+    font-size: 10px;
+    color: #111;
+}
+
+.resumeDetails {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 0.8fr;
+    gap: 34px;
+    border-bottom: none;
+}
+
+.resumeDetails h2 {
+    margin-bottom: 11px;
+}
+
+.resumeSkills p,
+.resumeEducation p,
+.resumeLanguages {
+    margin: 0 0 5px;
+    font-size: 10.7px;
+    line-height: 1.35;
+}
+
+.resumeEducation strong {
+    font-family: "Jost 700", Arial, sans-serif;
+    font-weight: normal;
+    color: #111;
+    margin-right: 8px;
+}
+
+@media print {
+    @page {
+        size: Letter;
+        margin: 0.35in;
+    }
+
+    body {
+        background: #fff;
+    }
+
+    .resumePage {
+        padding: 0;
+        background: #fff;
+    }
+
+    .resumeSheet {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .resumeHero {
+        grid-template-columns: 1fr auto;
+        gap: 24px;
+        padding-bottom: 14px;
+    }
+
+    .resumeLogo {
+        width: 22px;
+        margin-bottom: 10px;
+    }
+
+    .resumeHero h1 {
+        font-size: 58px;
+        line-height: 0.78;
+        letter-spacing: 0.5em;
+    }
+
+    .resumeTagline {
+        max-width: 420px;
+        margin-top: 12px;
+        font-size: 10.5px;
+        line-height: 1.3;
+    }
+
+    .resumeContact {
+        gap: 4px;
+        font-size: 8.2px;
+        line-height: 1.25;
+    }
+
+    .resumeIntro {
+        grid-template-columns: 110px 1fr;
+        gap: 22px;
+        padding: 10px 0;
+    }
+
+    .resumeIntro p {
+        font-size: 8.8px;
+        line-height: 1.28;
+        margin-bottom: 3px;
+    }
+
+    .resumeSection {
+        padding: 10px 0;
+    }
+
+    .resumeSection h2,
+    .resumeIntro h2 {
+        font-size: 7.5px;
+        letter-spacing: 0.5em;
+    }
+
+    .resumeJob {
+        grid-template-columns: 110px 1fr;
+        gap: 22px;
+        padding-bottom: 7px;
+        margin-bottom: 7px;
+        break-inside: avoid;
+    }
+
+    .resumeJobMeta span,
+    .resumeJobMeta small {
+        font-size: 7.4px;
+    }
+
+    .resumeJobContent h3 {
+        font-size: 9.8px;
+        margin-bottom: 3px;
+    }
+
+    .resumeJobIntro {
+        font-size: 8.1px;
+        line-height: 1.22;
+        margin-bottom: 3px;
+    }
+
+    .resumeJobContent li {
+        font-size: 7.8px;
+        line-height: 1.18;
+        margin-bottom: 1.4px;
+    }
+
+    .resumeWork {
+        display: flex !important;
+        gap: 14px;
+        margin-top: 8px;
+    }
+
+    .resumeWork a {
+        flex: 1;
+        padding-top: 6px;
+    }
+
+    .resumeWork h3 {
+        font-size: 8.5px;
+        margin-bottom: 4px;
+    }
+
+    .resumeWork p {
+        font-size: 8px;
+        line-height: 1.2;
+        margin-bottom: 5px;
+    }
+
+    .resumeWork small {
+        font-size: 7.8px;
+    }
+
+    .resumeDetails {
+        grid-template-columns: 1.35fr 1fr 0.8fr;
+        gap: 24px;
+    }
+
+    .resumeDetails h2 {
+        margin-bottom: 6px;
+    }
+
+    .resumeSkills p,
+    .resumeEducation p,
+    .resumeLanguages {
+        font-size: 7.6px;
+        line-height: 1.18;
+        margin-bottom: 3px;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+}

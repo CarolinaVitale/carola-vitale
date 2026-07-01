@@ -1,5 +1,5 @@
 import React from 'react';
-import Curriculum from '../components/Curriculum/Curriculum';
+import Curriculum from '../components/Resume/Resume';
 
 function CV() {
 

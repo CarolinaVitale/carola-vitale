@@ -1,0 +1,95 @@
+.project-showcase {
+    position: relative;
+    height: auto;
+    min-height: fit-content;
+    padding: 60px 20px;
+}
+
+.project-showcase__header {
+    text-align: center;
+}
+
+.project-showcase__kicker {
+    margin: 0;
+    color: gray;
+    font-family: "Jost 400";
+    letter-spacing: 0.05em;
+}
+
+.project-showcase__title {
+    margin-top: 20px;
+    color: black;
+    font-size: 3rem;
+    text-align: center;
+    font-family: "Jost 700";
+    letter-spacing: 0.05em;
+}
+
+.project-showcase__grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 60px auto 30px;
+}
+
+.project-showcase__card {
+    width: 460px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-showcase__image {
+    width: 400px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0.2rem;
+    transition: opacity 0.3s ease;
+}
+
+.project-showcase__image:hover {
+    opacity: 0.8;
+}
+
+.project-showcase__card-title {
+    margin: 1rem;
+    color: black;
+    font-family: "Jost 200";
+    letter-spacing: 0.05em;
+}
+
+.project-showcase__buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    .project-showcase {
+        padding: 60px 0;
+        text-align: center;
+    }
+
+    .project-showcase__kicker {
+        margin-top: 60px;
+    }
+
+    .project-showcase__grid {
+        flex-direction: column;
+        gap: 30px;
+        margin: 40px 0 80px;
+    }
+
+    .project-showcase__card {
+        width: 83vw;
+        padding: 20px;
+    }
+
+    .project-showcase__image {
+        width: 81vw;
+    }
+}
