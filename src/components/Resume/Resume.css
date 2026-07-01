@@ -388,3 +388,123 @@
         text-decoration: none;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .resumePage {
+        width: auto;
+        overflow-x: hidden;
+        background: #ffffff;
+        padding: 32px 30px;
+    }
+
+    .resumeSheet {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        box-shadow: none;
+        overflow-x: hidden;
+    }
+
+    .resumeHero {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+        padding-bottom: 28px;
+    }
+
+    .resumeLogo {
+        width: 32px;
+        margin-bottom: 18px;
+    }
+
+    .resumeHero h1 {
+        font-size: clamp(54px, 17vw, 76px);
+        line-height: 0.82;
+        letter-spacing: -0.055em;
+        max-width: 100%;
+        overflow-wrap: normal;
+    }
+
+    .resumeTagline {
+        max-width: 100%;
+        margin-top: 22px;
+        font-size: 17px;
+        line-height: 1.45;
+        overflow-wrap: break-word;
+    }
+
+    .resumeContact {
+        width: 100%;
+        text-align: left;
+        white-space: normal;
+        font-size: 14px;
+        gap: 7px;
+    }
+
+    .resumeIntro,
+    .resumeJob,
+    .resumeDetails {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .resumeIntro {
+        padding: 22px 0;
+    }
+
+    .resumeSection {
+        padding: 22px 0;
+    }
+
+    .resumeIntro p,
+    .resumeJobIntro,
+    .resumeJobContent li,
+    .resumeSkills p,
+    .resumeEducation p,
+    .resumeLanguages {
+        font-size: 15px;
+        line-height: 1.55;
+        max-width: 100%;
+        overflow-wrap: break-word;
+    }
+
+    .resumeJob {
+        padding-bottom: 22px;
+        margin-bottom: 22px;
+    }
+
+    .resumeJobContent h3 {
+        font-size: 20px;
+        line-height: 1.25;
+    }
+
+    .resumeJobMeta span {
+        font-size: 13px;
+    }
+
+    .resumeJobMeta small {
+        font-size: 13px;
+        margin-top: 4px;
+    }
+
+    .resumeWork {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .resumeWork a {
+        width: 100%;
+    }
+
+    .resumeWork h3 {
+        font-size: 16px;
+    }
+
+    .resumeWork p,
+    .resumeWork small {
+        font-size: 14px;
+    }
+}
