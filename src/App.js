@@ -15,7 +15,7 @@ import ContactPage from "./pages/ContactPage";
 import CV from "./pages/CV";
 import AboutPage from "./pages/AboutPage";
 import ExperiencePage from "./pages/ExperiencePage";
-import Projects from "./pages/Projects/Projects";
+import Projects from "./pages/ProjectsPage";
 
 function AppContent() {
   const location = useLocation();
@@ -27,6 +27,7 @@ function AppContent() {
 
       <ScrollToTop />
 
+      <div id="page-content" tabIndex="-1">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
@@ -34,8 +35,11 @@ function AppContent() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/resume" element={<CV />} />
+        <Route path="/cv" element={<CV />} />
+        <Route path="/curriculum-vitae" element={<CV />} />
         <Route path="*" element={<Home />} />
       </Routes>
+      </div>
 
       {!isResumePage && <Footer />}
     </>

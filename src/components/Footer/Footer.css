@@ -1,36 +1,62 @@
-/* FOOTER SECTION */
-
-.footer {
-    padding: 50px 0 20px;
-    display: flex;
-    border-top: solid 1px gray;
-    ;
-    margin: 0.1 1rem;
-    align-items: center;
-    justify-content: center;
+.pop-footer {
+  margin: 40px 24px 18px;
+  background: var(--lavender);
+  border-radius: 90px 30px 24px 24px;
+  padding: 48px 5% 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 32px;
 }
 
-.footer p {
-    text-align: center;
-    color: gray;
-    font-family: "Jost 200";
-    letter-spacing: 0.05em;
+.pop-footer a {
+  text-decoration: none;
 }
 
-.footer-image {
-    width: 140px;
-    margin-left: 10px;
-    margin-right: 10px;
+.pop-footer-links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
-@media screen and (max-width: 768px) {
-    .footer {
-        padding: 20px 0 10px;
-        flex-direction: column;
-        justify-content: center;
-    }
+.pop-footer a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
 
-    .footer p {
-        margin: 10px;
-    }
+.pop-copyright {
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  border-top: 1px solid #29212a40;
+  padding-top: 20px;
+}
+
+@media (max-width:600px) {
+  .pop-footer {
+    margin: 24px 14px 14px;
+    padding: 36px 24px 20px;
+  }
+  .pop-footer-links {
+    gap: 18px;
+  }
+}
+
+/* Organic lavender edge inspired by the supplied pastel mockup. */
+.pop-footer {
+  position: relative;
+  margin-top: 75px;
+  border-radius: 0 0 24px 24px;
+  padding-top: 36px;
+  isolation: isolate;
+}
+.pop-footer::before {
+  content: '';
+  position: absolute;
+  top: -34px;
+  left: 0;
+  width: 100%;
+  height: 36px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cpath fill='%23B6A0E8' d='M0 32C100 -20 160 0 260 22S420 38 520 15S670 38 780 20S960 -18 1060 10S1150 18 1200 32V40H0Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
 }

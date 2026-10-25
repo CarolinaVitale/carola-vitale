@@ -1,102 +1,58 @@
-.form-container {
-    font-family: "Jost 300";
-    letter-spacing: 0.1em;
-    margin: 5% 20%;
-    justify-content: center;
-    margin-bottom: 100px;
+.studio-contact-form-panel {
+  background: #f3a6ce8c;
+  border-radius: 5% 9% 5% 6% / 5% 4% 6% 8%;
+  padding: 40px;
+  position: relative;
 }
-
-.contact-form-motion {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.studio-contact-form {
+  display: flex;
+  flex-direction: column;
+  color: #29458e;
 }
-
-.contact-form-motion input:focus,
-.contact-form-motion textarea:focus {
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+.studio-contact-form label {
+  font-size: 13px;
+  text-transform: uppercase;
+  margin: 0 0 9px;
 }
-
-.contact-form-motionm label {
-    margin-bottom: 5px;
-    font-weight: bold;
+.studio-contact-form input,
+.studio-contact-form textarea {
+  width: 100%;
+  min-width: 0;
+  background: var(--cream);
+  border: 1px solid #5274d9;
+  border-radius: 9px;
+  padding: 15px 16px;
+  margin: 0 0 23px;
+  color: var(--ink);
+  font: 14px/1.5 Shababa, sans-serif;
 }
-
-.contact-form-motion input[type="text"],
-.contact-form-motion input[type="email"],
-.contact-form-motion textarea {
-    font-family: "Jost 300";
-    padding: 20px;
-    margin: 10px;
-    letter-spacing: 0.1em;
-    border: 1px solid #ccc;
+.studio-contact-form textarea {
+  resize: vertical;
+  min-height: 130px;
 }
-
-.contact-form-motion textarea {
-    height: 100px;
+.studio-contact-form input::placeholder,
+.studio-contact-form textarea::placeholder { color: #777168; opacity: 1; }
+.studio-contact-form button {
+  border: 0;
+  border-radius: 35px;
+  background: var(--coral);
+  color: #242127;
+  min-height: 55px;
+  padding: 14px 20px;
+  font: 22px/1 Chippie, sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
 }
-
-
-/* b u t t o n */
-.contact-form-motion input[type="submit"] {
-    font-family: "Jost 300";
-    text-align: center;
-    padding: 20px;
-    margin: 10px;
-    letter-spacing: 0.1em;
-    background-color: black;
-    color: #fff;
-    border: none;
-    border-radius: 1px;
-    cursor: pointer;
-        transition: all 0.3s ease-out;
-}
-
-.contact-form-motion input[type="submit"]:hover {
-    color: black;
-    background-color: #fff;
-    border: solid 1px black;
-        transition: all 0.3s ease-out;
-}
-
-/* e n d   b u t t o n */
-
-@media (max-width: 768px) {
-    .form-container {
-        margin: 5% 7%;
-        margin-top: 50px;
-        margin-bottom: 100px;
-    }
-}
-
-.success-message {
-    font-family: "Jost 300";
-    letter-spacing: 0.1em;
-    font-weight: bolder;
-    position: fixed;
-    top: 100px;
-    right: 20px;
-    background-color: black;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 1px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    z-index: 9999;
-    animation: fadeInOut 0.5s ease-in-out;
-}
-
-@keyframes fadeInOut {
-
-    0% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
+.studio-contact-form button span { font: 25px/1 sans-serif; transition: transform .2s; }
+.studio-contact-form button:hover span { transform: translateX(5px); }
+.studio-contact-form button:disabled { opacity: .65; cursor: wait; }
+.studio-contact-feedback { font-size: 13px; line-height: 1.6; }
+.studio-contact-feedback:not(:empty) { padding-top: 16px; }
+.studio-contact-feedback a { text-underline-offset: 3px; }
+@media (max-width:700px) {
+  .studio-contact-form-panel { padding: 28px 22px; }
 }

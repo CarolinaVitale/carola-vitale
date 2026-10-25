@@ -1,0 +1,160 @@
+.work-page {
+  padding: 45px 4% 20px;
+  color: #29458e;
+}
+.work-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9%;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.work-eyebrow,
+.work-section-heading > h2 {
+  font: 12px/1.5 Shababa, sans-serif;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.work-intro h1 {
+  font: clamp(42px, 4.8vw, 72px)/1.05 Chippie, sans-serif;
+  color: var(--blue);
+  margin-top: 20px;
+}
+.work-intro-copy p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  max-width: 500px;
+}
+.work-squiggle {
+  display: block;
+  width: min(100%, 420px);
+  height: auto;
+  margin-top: 20px;
+  object-fit: contain;
+}
+.work-section-heading {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  margin: 0 0 25px;
+}
+.work-section-heading > h2 { flex-shrink: 0; }
+.work-section-heading > span {
+  height: 1px;
+  background: #5274d97d;
+  flex: 1;
+}
+.work-section-heading > a,
+.work-section-heading > p {
+  font-size: 11px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.work-projects .selected-project-info { padding-left: 8px; padding-right: 8px; }
+.work-projects .selected-project-arrow { display: none; }
+.work-projects .selected-project-info > p { max-width: 100%; }
+.work-project-button {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 24px;
+  border: 1px solid var(--blue);
+  border-radius: 30px;
+  padding: 10px 18px;
+  margin-top: 18px;
+  font-size: 11px;
+  text-transform: uppercase;
+  transition: background .2s;
+}
+.work-project-button:hover { background: #f3a6ce55; }
+.work-projects,
+.work-skills { margin-bottom: 45px; }
+.work-skill-switch {
+  display: flex;
+  border: 1px solid var(--blue);
+  border-radius: 30px;
+  flex-shrink: 0;
+}
+.work-skill-switch button {
+  border: 0;
+  border-radius: 30px;
+  background: transparent;
+  color: #29458e;
+  padding: 10px 22px;
+  font: 11px Shababa, sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.work-skill-switch button[aria-pressed="true"] { background: var(--pink); }
+.work-skill-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.work-skill-card {
+  border-radius: 28px 38px 28px 33px;
+  padding: 25px 28px 28px;
+  background: #f3a6ce30;
+}
+.work-skill-card:nth-child(3n + 2) { background: #b6a0e82b; }
+.work-skill-card:nth-child(3) { background: #e8de6729; }
+.work-skill-card:nth-child(4) { background: #5274d914; }
+.work-skill-card img {
+  width: 74px;
+  height: 65px;
+  object-fit: contain;
+  margin-bottom: 12px;
+  transform: rotate(-5deg);
+}
+.work-skill-card h3 {
+  font: 27px/1.1 Chippie, sans-serif;
+  margin-bottom: 10px;
+}
+.work-skill-card p { font-size: 14px; line-height: 1.65; max-width: 300px; }
+.work-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 25px;
+  padding: 15px 0 20px;
+}
+.work-tool {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  font-size: 11px;
+}
+.work-tool img { width: 62px; height: 62px; object-fit: contain; }
+.work-tool-letter {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  background: #242127;
+  color: var(--cream);
+  border-radius: 12px;
+  font: 30px Shababa, sans-serif;
+}
+#work-project-list { scroll-margin-top: 115px; }
+@media (max-width: 1050px) {
+  .work-page { padding: 35px 30px 20px; }
+  .work-intro { gap: 35px; }
+  .work-intro-copy p { font-size: 14px; }
+  .work-tools-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px; }
+  .work-skill-card { padding: 22px; }
+  .work-skill-card h3 { font-size: 24px; }
+}
+@media (max-width: 700px) {
+  .work-page { padding: 25px 24px 15px; }
+  .work-intro { grid-template-columns: 1fr; gap: 25px; margin-bottom: 35px; }
+  .work-intro h1 { font-size: clamp(40px, 11vw, 60px); }
+  .work-section-heading { flex-wrap: wrap; gap: 15px; }
+  .work-section-heading > span { min-width: 30px; }
+  .work-skill-switch { width: 100%; }
+  .work-skill-switch button { flex: 1; padding: 12px; }
+  .work-skill-grid { grid-template-columns: 1fr; gap: 15px; }
+  .work-skill-card { padding: 25px; }
+  .work-tools-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px 20px; }
+}

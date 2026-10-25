@@ -1,102 +1,38 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { useInView } from 'react-intersection-observer';
-import { motion } from 'framer-motion';
-import '../ContactForm/ContactForm.css';
+import './ContactForm.css';
 
 export const ContactUs = () => {
-    const [namePlaceholder, setNamePlaceholder] = useState('NAME *');
-    const [emailPlaceholder, setEmailPlaceholder] = useState('EMAIL *');
-    const [messagePlaceholder, setMessagePlaceholder] = useState('MESSAGE *');
-    const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-
-    const handleInputChange = (e, setStateFunction, placeholderValue) => {
-        if (e.target.value !== '') {
-            setStateFunction('');
-        } else {
-            setStateFunction(placeholderValue);
-        }
-    };
-
-    const sendEmail = (e) => {
-        e.preventDefault();
-
-        emailjs
-            .sendForm(
-                'service_6210qxq',
-                'template_1orrt39',
-                e.target, {
-                publicKey:
-                    'x91JMh1N52GJBjivZ',
-            })
-            .then(
-                () => {
-                    e.target.reset();
-                    setNamePlaceholder('NAME *');
-                    setEmailPlaceholder('EMAIL *');
-                    setMessagePlaceholder('MESSAGE *');
-                    setShowSuccessMessage(true);
-                    setTimeout(() => {
-                        setShowSuccessMessage(false);
-                    }, 8000);
-                },
-                (error) => {
-                    console.log('FAILED...', error.text);
-                },
-            );
-    };
-
-    const [contactFormRef, contactFormInView] = useInView({ threshold: 0.5 });
-
-    return (
-        <div className="form-container">
-            <div className="motion">
-                <motion.div
-
-                    ref={contactFormRef}
-                    initial={{ opacity: 0, y: -50 }}
-                    animate={{ opacity: contactFormInView ? 1 : 0, y: contactFormInView ? 0 : -50 }}
-                    transition={{ duration: 0.5 }}
-                >
-                    <form ref={contactFormRef} className="contact-form-motion" onSubmit={sendEmail}>
-                        <input
-                            type="text"
-                            name="user_name"
-                            onChange={(e) => handleInputChange(e, setNamePlaceholder, 'NAME *')}
-                            placeholder={namePlaceholder}
-                            required
-                        />
-                        <input
-                            type="email"
-                            name="user_email"
-                            onChange={(e) => handleInputChange(e, setEmailPlaceholder, 'EMAIL *')}
-                            placeholder={emailPlaceholder}
-                            required
-                        />
-                        <textarea
-                            name="message"
-                            onChange={(e) => handleInputChange(e, setMessagePlaceholder, 'MESSAGE *')}
-                            placeholder={messagePlaceholder}
-                            required
-                        />
-
-                        <input type="submit" value="SEND" />
-
-                    </form>
-                </motion.div>
-            </div>
-
-
-            {showSuccessMessage && (
-                <div className="success-message">
-                    Your message has been sent successfully!
-                </div>
-            )}
-
-        </div>
-    );
+  const [status, setStatus] = useState('idle');
+  const sendEmail = async event => {
+    event.preventDefault();
+    if (status === 'sending') return;
+    const form = event.currentTarget;
+    setStatus('sending');
+    try {
+      await emailjs.sendForm('service_6210qxq', 'template_1orrt39', form, {
+        publicKey: 'x91JMh1N52GJBjivZ',
+      });
+      form.reset();
+      setStatus('success');
+    } catch {
+      setStatus('error');
+    }
+  };
+  return <div className="studio-contact-form-panel">
+    <form className="studio-contact-form" onSubmit={sendEmail} aria-busy={status === 'sending'}>
+      <label htmlFor="contact-name">Name <span aria-hidden="true">*</span></label>
+      <input id="contact-name" name="user_name" type="text" autoComplete="name" placeholder="Your name" required maxLength={150} />
+      <label htmlFor="contact-email">Email <span aria-hidden="true">*</span></label>
+      <input id="contact-email" name="user_email" type="email" autoComplete="email" placeholder="your@email.com" required maxLength={254} />
+      <label htmlFor="contact-message">Message <span aria-hidden="true">*</span></label>
+      <textarea id="contact-message" name="message" placeholder="Tell me about your project, idea or just say hi…" required rows={5} maxLength={5000} />
+      <button type="submit" disabled={status === 'sending'}>{status === 'sending' ? 'Sending…' : 'Send message'} <span aria-hidden="true">⟶</span></button>
+      <div className="studio-contact-feedback" aria-live="polite" aria-atomic="true">
+        {status === 'success' && <p>Your message has been sent. Thank you — I'll be in touch! ♡</p>}
+        {status === 'error' && <p>Your message couldn't be sent. Please try again or <a href="mailto:cvitalerrico@gmail.com">email me directly</a>.</p>}
+      </div>
+    </form>
+  </div>;
 };
-
-
-
 export default ContactUs;

@@ -1,3 +1,16 @@
+@font-face {
+  font-family: Chippie;
+  src: url('./fonts/ChippieDEMO-Regular.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Shababa;
+  src: url('./fonts/ShababaBaW01-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+
 /* app.css */
 
 @font-face {
@@ -30,14 +43,19 @@
 }
 
 body {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .cv-image {
   width: 100%;
 }
+
+:root{--pink:#F3A6CE;--coral:#F47A54;--lavender:#B6A0E8;--blue:#5274D9;--yellow:#E8DE67;--cream:#FFF9F1;--ink:#242127}
+body{background:var(--cream);color:var(--ink);font-family:Shababa,sans-serif}
+a{color:inherit}button,input,textarea{font:inherit}*{box-sizing:border-box}:focus-visible{outline:3px solid #263f87;outline-offset:5px}section[id]{scroll-margin-top:110px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

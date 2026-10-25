@@ -1,82 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../Navbar/Navbar.css';
-import logo from '../../images/CV-logo.png'
+import './Navbar.css';
 
-function Navbar() {
-    const [click, setClick] = useState(false);
-    const [navbar, setNavbar] = useState(false);
-
-    const handleClick = () => setClick(!click);
-    const closeMobileMenu = () => setClick(false);
-
-    const changeBackground = () => {
-        if (window.scrollY >= 100) {
-            setNavbar(true);
-        } else {
-            setNavbar(false);
-        }
-    }
-    useEffect(() => {
-        window.addEventListener('scroll', changeBackground);
-        return () => window.removeEventListener('scroll', changeBackground);
-    }, []);
-
-    return (
-        <>
-        
-            <nav className={navbar ? 'navbar active' : 'navbar'}>
-                <div className='navbar-container'>
-                    <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                        <img className='logo' src={logo} alt='logo' />
-                    </Link>
-                    <div className='menu-icon' onClick={handleClick}>
-                        <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
-                    </div>
-                    <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-
-                        <li className='nav-item'>
-                            <Link
-                                to='about'
-                                className='nav-links'
-                                onClick={closeMobileMenu}
-                            >
-                                ABOUT
-                            </Link>
-                        </li>
-                        {/* <li className='nav-item'>
-                            <Link
-                                to='/cv'
-                                className='nav-links'
-                                onClick={closeMobileMenu}
-                            >
-                                RESUME
-                            </Link>
-                        </li> */}
-                        
-                        <li className='nav-item'>
-                            <Link
-                                to='/projects'
-                                className='nav-links'
-                                onClick={closeMobileMenu}
-                            >
-                                PROJECTS
-                            </Link>
-                        </li>
-                        <li className='nav-item'>
-                            <Link
-                                to='/contact'
-                                className='nav-links'
-                                onClick={closeMobileMenu}
-                            >
-                                CONTACT
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </>
-    );
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+  const close = () => setOpen(false);
+  return <><a className="pop-skip" href="#page-content">Skip to content</a><header className="pop-header"><nav aria-label="Main navigation" className="pop-nav"><Link to="/" className="pop-wordmark" onClick={close}>CAROLA VITALE <span aria-hidden="true">♡</span></Link><button type="button" className="pop-menu-toggle" aria-expanded={open} aria-controls="pop-navigation" onClick={() => setOpen(!open)}>{open ? 'Close ×' : 'Menu +'}</button><div className={`pop-nav-links ${open ? 'is-open' : ''}`} id="pop-navigation"><Link to="/about" onClick={close}>About</Link><Link to="/projects" onClick={close}>Work</Link></div><Link className="pop-nav-cta" to="/contact" onClick={close}>Let's talk <span aria-hidden="true">⟶</span></Link></nav></header></>;
 }
-
-export default Navbar;

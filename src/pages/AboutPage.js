@@ -1,89 +1,64 @@
 import React from 'react';
-import '../components/About/About.css'
-import { useInView } from 'react-intersection-observer';
-import { motion } from 'framer-motion';
-import CircleText from '../components/CircleText/CircleText';
+import Offering from './Offering';
+import './AboutPage.css';
 
-function AboutPage() {
-    const [AnimationRef, AnimationInView] = useInView({ threshold: 0.5 });
-    const [AnimationRef2, AnimationInView2] = useInView({ threshold: 0.5 });
-    const [AnimationRef3, AnimationInView3] = useInView({ threshold: 0.5 });
-    const [AnimationRef4, AnimationInView4] = useInView({ threshold: 0.5 });
+const art = name => `/brand/${name}`;
+const passions = [
+  ['about-laptop.png', 'Web Development', 'Frontend, UI and digital experiences.'],
+  ['about-fashion.png', 'Fashion & Design', 'A creative foundation that inspires everything I create.'],
+  ['about-photo.png', 'Photography & Content', 'Visual storytelling and creative content.'],
+  ['about-bread.png', 'SOURAW', 'My sourdough brand. Baking, creating and sharing the process.'],
+  ['about-art.png', 'Creative Entrepreneur', 'Building brands, products and ideas from the ground up.'],
+];
 
-    return (
-        <>
-            <section id="about" className='about'>
+export default function AboutPage() {
+  return (
+    <main className="studio-about">
+      <section className="studio-about-intro" aria-labelledby="studio-about-title">
+        <div className="studio-about-story">
+          <p className="studio-about-label">01 / About me</p>
+          <h1 id="studio-about-title">A mix of logic<br />and creativity. ♡</h1>
+          <p>I'm a front-end developer and creative entrepreneur with a background in fashion, marketing and design.</p>
+          <p>I love bringing ideas to life through thoughtful digital experiences that balance aesthetics, functionality, and personality.</p>
+          <p>But creativity doesn't stop at my screen. I'm also a fashion designer, content creator, photographer and the founder of SOURAW, my sourdough brand. From writing code and designing websites to baking bread, creating content and building brands, I love exploring different ways to bring ideas to life.</p>
+          <p className="studio-about-motto">Different passions. One creative mind. ♡</p>
+        </div>
+        <div className="studio-about-visual">
+          <div className="studio-about-profile">
+            <img className="studio-about-photo" src="/brand/profile-watercolor.jpg" alt="Watercolor portrait of Carola holding small white flowers" width="1086" height="1139" fetchpriority="high" />
+            <svg className="studio-about-ring" viewBox="0 0 500 500" aria-hidden="true">
+              <defs><path id="studio-profile-ring" d="M250,250 m-232,0 a232,232 0 1,1 464,0 a232,232 0 1,1 -464,0" /></defs>
+              <text><textPath href="#studio-profile-ring" textLength="1457" lengthAdjust="spacing">THIS IS MY PROFILE · ♡ · THIS IS MY PROFILE · ♡ · </textPath></text>
+            </svg>
+            <img className="studio-about-heart" src={art('heart-sticker@4x.png')} alt="" />
+          </div>
+          <p className="studio-about-note">Sometimes<br />I write code.<br />Sometimes<br />I bake bread.<br />Always<br />creating. ♡</p>
+        </div>
+      </section>
 
-                <motion.div
-                    ref={AnimationRef4}
-                    initial={{ opacity: 0, y: -50 }}
-                    animate={{ opacity: AnimationInView4 ? 1 : 0, y: AnimationInView4 ? 0 : -50 }}
-                    transition={{ duration: 0.5 }}
-                >
-                    <p className="section__text__p1-about">GET TO KNOW ME</p>
-                    <h1 className="title-about">ABOUT ME</h1>
-                </motion.div>
+      <section className="studio-about-passions" aria-label="My creative world">
+        {passions.map(([image, title, copy]) => <article key={title}>
+          <img src={art(image)} alt="" loading="lazy" />
+          <h2>{title}</h2><p>{copy}</p>
+        </article>)}
+      </section>
 
-                <div className="section-container">
-                    <div className="about-details-container">
+      <Offering />
 
-                        <motion.div
-                            ref={AnimationRef}
-                            initial={{ opacity: 0, y: 50 }}
-                            animate={{ opacity: AnimationInView ? 1 : 0, y: AnimationInView ? 0 : 50 }}
-                            transition={{ duration: 0.5 }}
-                        >
-                            <div className="about-containers">
-                                <div className="details-container">
-                                    <i className="fa-solid fa-code icon fa-xl"></i>
-                                    <h3>EXPERIENCE</h3>
-                                    <p>2+ years <br />Web Development</p>
-                                </div>
-
-                                <div className="details-container">
-                                    <i className="fa-solid fa-user-graduate fa-xl icon"></i>
-                                    <h3>EDUCATION</h3>
-                                    <p>Web Development Bootcamp<br />Digital Marketing Specialist for Luxury Brand</p>
-                                </div>
-                            </div>
-                        </motion.div>
-
-                        <motion.div
-                            ref={AnimationRef2}
-                            initial={{ opacity: 0, y: 50 }}
-                            animate={{ opacity: AnimationInView2 ? 1 : 0, y: AnimationInView2 ? 0 : 50 }}
-                            transition={{ duration: 0.5 }}
-                        >
-                            <div className="text-container">
-                                <p>
-                                    Front-End Web Developer with a strong UI focus, combining React development with a background in fashion design. I enjoy crafting visually polished and detail-oriented interfaces, where aesthetics, usability and clean code meet. My approach blends creative sensibility with technical rigor and full-stack collaboration experience.
-                                </p>
-                            </div>
-                        </motion.div>
-
-                    </div>
-
-
-                    <motion.div
-                        ref={AnimationRef3}
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: AnimationInView3 ? 1 : 0, x: AnimationInView3 ? 0 : 50 }}
-                        transition={{ duration: 0.5 }}
-                    >
-                        <div className="section__pic-container-about">
-
-                            <CircleText className="about-pic"
-                                text="• ♡ • THIS IS MY PROFILE • ♡ • THIS IS MY PROFILE " />
-                        </div>
-
-
-                    </motion.div>
-
-                </div>
-            </section>
-        </>
-        
-    );
+      <section className="studio-about-world" aria-labelledby="studio-world-title">
+        <h2 id="studio-world-title">A little more<br />of my world ♡ <span aria-hidden="true">⤴</span></h2>
+        <a className="studio-world-card studio-world-souraw" href="https://www.instagram.com/souraw.us/" target="_blank" rel="noopener noreferrer">
+          <div><h3>@souraw.us <span aria-hidden="true">↗</span></h3><p>Sourdough, entrepreneurship<br />and creative content.</p></div>
+          <img src={art('bread-sticker@4x.png')} alt="" loading="lazy" />
+        </a>
+        <a className="studio-world-card studio-world-untamed" href="https://www.instagram.com/souraw.lab/" target="_blank" rel="noopener noreferrer">
+          <div><h3>@souraw.lab <span aria-hidden="true">↗</span></h3><p>Design, DIY, creative projects<br />and behind the scenes.</p></div>
+          <img src={art('studio-sticker.png')} alt="" loading="lazy" />
+        </a>
+      </section>
+      <aside className="studio-about-background" aria-label="My background">
+        <p><strong>Creative foundation</strong> Fashion Design · Web Development Bootcamp · Digital Marketing for Luxury Brands</p>
+      </aside>
+    </main>
+  );
 }
-
-export default AboutPage;
