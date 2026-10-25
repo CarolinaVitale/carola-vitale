@@ -1,0 +1,43 @@
+import React from 'react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
+import emailjs from '@emailjs/browser';
+import ProjectInquiry from './ProjectInquiry';
+
+jest.mock('@emailjs/browser', () => ({ send: jest.fn() }));
+
+test('keeps answers through review and retry, and submits the complete brief', async () => {
+  emailjs.send.mockRejectedValueOnce(new Error('Network')).mockResolvedValueOnce({ status: 200 });
+  render(<MemoryRouter><ProjectInquiry /></MemoryRouter>);
+  fireEvent.click(screen.getByRole('button', { name: /start your project/i }));
+  fireEvent.change(screen.getByLabelText('Your name *'), { target: { value: 'Test Client' } });
+  fireEvent.change(screen.getByLabelText('Brand / Business name *'), { target: { value: 'Studio Bloom' } });
+  fireEvent.change(screen.getByLabelText('Email *'), { target: { value: 'client@example.com' } });
+  fireEvent.change(screen.getByLabelText('Where are you based? *'), { target: { value: 'Miami, US' } });
+  fireEvent.click(screen.getByRole('button', { name: 'Next' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Next' }));
+  expect(screen.getByRole('alert').textContent).toMatch(/select at least one/);
+  fireEvent.click(screen.getByLabelText('Website design & development'));
+  fireEvent.click(screen.getByRole('button', { name: 'Next' }));
+  fireEvent.change(screen.getByLabelText('Tell me about your project *'), { target: { value: 'A warm website for my flower studio.' } });
+  fireEvent.click(screen.getByRole('button', { name: 'Next' }));
+  fireEvent.click(screen.getByLabelText('Organic & earthy'));
+  fireEvent.click(screen.getByLabelText('Contact form'));
+  fireEvent.click(screen.getByRole('button', { name: 'Next' }));
+  fireEvent.change(screen.getByLabelText('When would you like to start? *'), { target: { value: 'In 1–3 months' } });
+  fireEvent.click(screen.getByRole('button', { name: 'Review my project' }));
+  expect(screen.getByText('Studio Bloom')).toBeTruthy();
+  fireEvent.click(screen.getByRole('button', { name: 'Edit About you' }));
+  expect(screen.getByLabelText('Your name *').value).toBe('Test Client');
+  for (let i = 0; i < 4; i++) fireEvent.click(screen.getByRole('button', { name: 'Next' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Review my project' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Submit my project' }));
+  await screen.findByRole('alert');
+  expect(screen.getByText('Studio Bloom')).toBeTruthy();
+  fireEvent.click(screen.getByRole('button', { name: 'Submit my project' }));
+  await waitFor(() => expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(/on my radar/));
+  expect(emailjs.send).toHaveBeenCalledTimes(2);
+  const brief = emailjs.send.mock.calls[1][2];
+  expect(brief.user_email).toBe('client@example.com');
+  for (const value of ['Studio Bloom', 'Website design & development', 'A warm website', 'Organic & earthy', 'Contact form', 'In 1–3 months']) expect(brief.message).toContain(value);
+});

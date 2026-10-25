@@ -1,10 +1,12 @@
 import ArrowIcon from '../components/ArrowIcon/ArrowIcon';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ContactMe from '../components/ContactForm/ContactForm';
 import './ContactPage.css';
 
 export default function ContactPage() {
   return <main className="studio-contact">
+    <aside className="contact-project-invite"><div><h2>Have a project in mind? ♡</h2><p>Share your ideas and preferences for a personalized proposal.</p></div><Link to="/start-project">Start your project <ArrowIcon /></Link></aside>
     <section className="studio-contact-layout" aria-labelledby="contact-page-title">
       <div className="studio-contact-intro">
         <p className="studio-contact-label">03 / Contact me</p>

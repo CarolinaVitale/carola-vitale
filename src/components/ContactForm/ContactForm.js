@@ -1,22 +1,25 @@
 import ArrowIcon from '../ArrowIcon/ArrowIcon';
 import React, { useState } from 'react';
-import emailjs from '@emailjs/browser';
+import { sendContactEmail } from '../../services/contactEmail';
 import './ContactForm.css';
 
 export const ContactUs = () => {
   const [status, setStatus] = useState('idle');
+  const [errorDetail, setErrorDetail] = useState('');
   const sendEmail = async event => {
     event.preventDefault();
     if (status === 'sending') return;
     const form = event.currentTarget;
     setStatus('sending');
+    setErrorDetail('');
     try {
-      await emailjs.sendForm('service_6210qxq', 'template_1orrt39', form, {
-        publicKey: 'x91JMh1N52GJBjivZ',
-      });
+      const values = new FormData(form);
+      await sendContactEmail({ name: values.get('user_name'), email: values.get('user_email'), message: values.get('message') });
       form.reset();
       setStatus('success');
-    } catch {
+    } catch (error) {
+      console.error('Contact email failed', { status: error?.status, text: error?.text || error?.message });
+      setErrorDetail(error?.text || error?.message || 'Connection error');
       setStatus('error');
     }
   };
@@ -32,6 +35,7 @@ export const ContactUs = () => {
       <div className="studio-contact-feedback" aria-live="polite" aria-atomic="true">
         {status === 'success' && <p>Your message has been sent. Thank you — I'll be in touch! ♡</p>}
         {status === 'error' && <p>Your message couldn't be sent. Please try again or <a href="mailto:cvitalerrico@gmail.com">email me directly</a>.</p>}
+        {status === 'error' && process.env.NODE_ENV === 'development' && <p role="alert">Email service: {errorDetail}</p>}
       </div>
     </form>
   </div>;
