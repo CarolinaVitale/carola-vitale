@@ -1,3 +1,4 @@
+import ArrowIcon from '../ArrowIcon/ArrowIcon';
 import React from 'react';
 
 const projects = [
@@ -41,9 +42,9 @@ export default function SelectedProjectGrid({ expanded = false }) {
             <span className="selected-project-category">{project.category}</span>
             <h3><a href={project.url} target="_blank" rel="noopener noreferrer">{project.name}</a></h3>
             <p>{project.description}</p>
-            <a className="selected-project-arrow" href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${project.name} website`}><span aria-hidden="true">→</span></a>
-            {expanded && <a className="work-project-button" href={project.url} target="_blank" rel="noopener noreferrer">View project <span aria-hidden="true">→</span></a>}
-            {project.code && <a className="selected-project-code" href={project.code} target="_blank" rel="noopener noreferrer">View code ↗</a>}
+            <a className="selected-project-arrow" href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${project.name} website`}><ArrowIcon /></a>
+            {expanded && <a className="work-project-button" href={project.url} target="_blank" rel="noopener noreferrer">View project <ArrowIcon /></a>}
+            {project.code && <a className="selected-project-code" href={project.code} target="_blank" rel="noopener noreferrer">View code <ArrowIcon direction="upRight" /></a>}
           </div>
         </article>
       ))}

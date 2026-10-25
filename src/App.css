@@ -59,3 +59,5 @@ html {
 body{background:var(--cream);color:var(--ink);font-family:Shababa,sans-serif}
 a{color:inherit}button,input,textarea{font:inherit}*{box-sizing:border-box}:focus-visible{outline:3px solid #263f87;outline-offset:5px}section[id]{scroll-margin-top:110px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.arrow-icon { display: inline-block; width: 1.2em; height: 1.2em; flex-shrink: 0; vertical-align: -0.2em; }

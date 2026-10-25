@@ -1,3 +1,4 @@
+import ArrowIcon from '../components/ArrowIcon/ArrowIcon';
 import React from 'react';
 import ContactMe from '../components/ContactForm/ContactForm';
 import './ContactPage.css';
@@ -24,6 +25,6 @@ export default function ContactPage() {
       <a href="https://www.instagram.com/souraw.us/" target="_blank" rel="noopener noreferrer"><span className="studio-contact-badge" aria-hidden="true">♡</span><div><h2>@souraw.us</h2><p>Sourdough, food &<br />creative content.</p></div></a>
       <a href="https://www.instagram.com/souraw.lab/" target="_blank" rel="noopener noreferrer"><span className="studio-contact-badge" aria-hidden="true">✳</span><div><h2>@souraw.lab</h2><p>Design, creative projects<br />& behind the scenes.</p></div></a>
     </section>
-    <div className="studio-contact-signoff"><a href="https://www.linkedin.com/in/carolinavitale/" target="_blank" rel="noopener noreferrer">Let's connect on LinkedIn ↗</a><img src="/brand/laptop-sticker.png" alt="" /><img src="/brand/bread-sticker@4x.png" alt="" /></div>
+    <div className="studio-contact-signoff"><a href="https://www.linkedin.com/in/carolinavitale/" target="_blank" rel="noopener noreferrer">Let's connect on LinkedIn <ArrowIcon direction="upRight" /></a><img src="/brand/laptop-sticker.png" alt="" /><img src="/brand/bread-sticker@4x.png" alt="" /></div>
   </main>;
 }

@@ -1,3 +1,4 @@
+import ArrowIcon from '../components/ArrowIcon/ArrowIcon';
 import React from 'react';
 import Offering from './Offering';
 import './AboutPage.css';
@@ -48,11 +49,11 @@ export default function AboutPage() {
       <section className="studio-about-world" aria-labelledby="studio-world-title">
         <h2 id="studio-world-title">A little more<br />of my world ♡ <span aria-hidden="true">⤴</span></h2>
         <a className="studio-world-card studio-world-souraw" href="https://www.instagram.com/souraw.us/" target="_blank" rel="noopener noreferrer">
-          <div><h3>@souraw.us <span aria-hidden="true">↗</span></h3><p>Sourdough, entrepreneurship<br />and creative content.</p></div>
+          <div><h3>@souraw.us <ArrowIcon direction="upRight" /></h3><p>Sourdough, entrepreneurship<br />and creative content.</p></div>
           <img src={art('bread-sticker@4x.png')} alt="" loading="lazy" />
         </a>
         <a className="studio-world-card studio-world-untamed" href="https://www.instagram.com/souraw.lab/" target="_blank" rel="noopener noreferrer">
-          <div><h3>@souraw.lab <span aria-hidden="true">↗</span></h3><p>Design, DIY, creative projects<br />and behind the scenes.</p></div>
+          <div><h3>@souraw.lab <ArrowIcon direction="upRight" /></h3><p>Design, DIY, creative projects<br />and behind the scenes.</p></div>
           <img src={art('studio-sticker.png')} alt="" loading="lazy" />
         </a>
       </section>

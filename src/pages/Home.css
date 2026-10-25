@@ -707,6 +707,9 @@
     padding: 55px 10px;
     gap: 40px;
   }
+  .pop-about-copy {
+    order: -1;
+  }
   .pop-about-art {
     max-width: 430px;
     width: 100%;
@@ -1094,14 +1097,16 @@
 @media (max-width: 700px) {
   .pop-contact {
     margin-top: 25px;
-    padding: 32px 24px 270px;
+    padding: 32px 24px calc(clamp(310px, 83vw, 405px) - 96px);
   }
   .pop-contact > .pop-doodle {
-    width: 200px;
-    height: 255px;
-    left: 24px;
+    width: min(74%, 295px);
+    height: clamp(280px, 76vw, 375px);
+    left: auto;
+    right: 8px;
     top: auto;
-    bottom: 0;
+    bottom: -32px;
+    transform: scaleX(-1);
   }
 }
 

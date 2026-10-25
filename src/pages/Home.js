@@ -1,3 +1,4 @@
+import ArrowIcon from '../components/ArrowIcon/ArrowIcon';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SelectedProjectGrid from '../components/Projects/SelectedProjectGrid';
@@ -22,7 +23,7 @@ export default function Home() {
           <div className="pop-hero-intro">
             <p className="pop-tagline">Design · Develop · Create ♡</p>
             <p className="pop-introduction">I'm a frontend developer and designer who loves turning ideas into meaningful digital experiences.</p>
-            <a className="pop-button coral" href="#work">View my work <span aria-hidden="true">⟶</span></a>
+            <a className="pop-button coral" href="#work">View my work <ArrowIcon /></a>
           </div>
           <Doodle name="petals-sticker@4x.png" className="hero-flower" />
         </div>
@@ -35,7 +36,7 @@ export default function Home() {
 
       <section className="pop-about" id="about" aria-labelledby="about-title">
         <div className="pop-about-art pop-about-art--portrait"><span className="pop-art-note">A little curiosity.<br />A lot of heart.</span><img className="pop-about-portrait" src={asset('contact-workspace-watercolor.png')} alt="Watercolor illustration of Carola resting her head beside her laptop in a cozy studio" loading="lazy" width="1086" height="1448" /><Doodle name="heart-sticker@4x.png" className="about-coffee" /></div>
-        <div className="pop-about-copy"><SectionHeading number="01" label="About me" id="about-title">A mix of logic<br />and <em className="pop-highlight">creativity.</em> ♡</SectionHeading><p>I'm Carola, a frontend developer and designer with a background in fashion and marketing. I love creating digital experiences, building brands, and exploring ideas that combine creativity with strategy.</p><p>From a first sketch to the last line of code, I bring a thoughtful eye and an entrepreneurial spirit to everything I create.</p><Link className="pop-button yellow" to="/about">Get to know me <span aria-hidden="true">⟶</span></Link><Doodle name="flower@4x.png" className="about-flower" /></div>
+        <div className="pop-about-copy"><SectionHeading number="01" label="About me" id="about-title">A mix of logic<br />and <em className="pop-highlight">creativity.</em> ♡</SectionHeading><p>I'm Carola, a frontend developer and designer with a background in fashion and marketing. I love creating digital experiences, building brands, and exploring ideas that combine creativity with strategy.</p><p>From a first sketch to the last line of code, I bring a thoughtful eye and an entrepreneurial spirit to everything I create.</p><Link className="pop-button yellow" to="/about">Get to know me <ArrowIcon /></Link><Doodle name="flower@4x.png" className="about-flower" /></div>
       </section>
 
       <section id="work" className="selected-work" aria-labelledby="work-title">
@@ -45,13 +46,13 @@ export default function Home() {
             <p>A selection of projects combining design, development, and a lot of care.</p>
           </div>
           <img className="home-work-line" src="/brand/work-line-lavender@4x.png" alt="" loading="lazy" />
-          <Link to="/projects" className="selected-work-all">View all projects <span aria-hidden="true">⟶</span></Link>
+          <Link to="/projects" className="selected-work-all">View all projects <ArrowIcon /></Link>
         </div>
         <SelectedProjectGrid />
       </section>
 
 
-      <section className="pop-contact coral" id="contact" aria-labelledby="contact-title"><Doodle name="founder-sticker@4x.png" /><div><p className="pop-eyebrow">03 / Let’s talk</p><h2 id="contact-title">Let's make<br /><em className="pop-highlight">something great.</em></h2><p>A website, a brand, or an idea that won't leave your head.<br />I'd love to hear about it.</p></div><Link className="pop-button pink" to="/contact">Let's talk ♡ <span aria-hidden="true">⟶</span></Link></section>
+      <section className="pop-contact coral" id="contact" aria-labelledby="contact-title"><Doodle name="founder-sticker@4x.png" /><div><p className="pop-eyebrow">03 / Let’s talk</p><h2 id="contact-title">Let's make<br /><em className="pop-highlight">something great.</em></h2><p>A website, a brand, or an idea that won't leave your head.<br />I'd love to hear about it.</p></div><Link className="pop-button pink" to="/contact">Let's talk ♡ <ArrowIcon /></Link></section>
     </main>
   );
 }

@@ -1,3 +1,4 @@
+import ArrowIcon from '../ArrowIcon/ArrowIcon';
 import "./Resume.css";
 import logo from "../../images/CV-logo.png";
 
@@ -128,19 +129,19 @@ export default function Resume() {
             <a href="https://souraw.com" target="_blank" rel="noreferrer">
               <h3>SOURAW</h3>
               <p>React · Firebase · Firestore · Product Design · Responsive UI</p>
-              <small>souraw.com →</small>
+              <small>souraw.com <ArrowIcon /></small>
             </a>
 
             <a href="https://carolavitale.com" target="_blank" rel="noreferrer">
               <h3>Portfolio</h3>
               <p>Frontend · UI Design · Product Work</p>
-              <small>carolavitale.com →</small>
+              <small>carolavitale.com <ArrowIcon /></small>
             </a>
 
             <a href="https://bymiguelbravo.com" target="_blank" rel="noreferrer">
               <h3>By Miguel Bravo</h3>
               <p>Website Design · Frontend · Content Architecture</p>
-              <small>bymiguelbravo.com →</small>
+              <small>bymiguelbravo.com <ArrowIcon /></small>
             </a>
           </div>
         </section>

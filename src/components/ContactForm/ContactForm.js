@@ -1,3 +1,4 @@
+import ArrowIcon from '../ArrowIcon/ArrowIcon';
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import './ContactForm.css';
@@ -27,7 +28,7 @@ export const ContactUs = () => {
       <input id="contact-email" name="user_email" type="email" autoComplete="email" placeholder="your@email.com" required maxLength={254} />
       <label htmlFor="contact-message">Message <span aria-hidden="true">*</span></label>
       <textarea id="contact-message" name="message" placeholder="Tell me about your project, idea or just say hi…" required rows={5} maxLength={5000} />
-      <button type="submit" disabled={status === 'sending'}>{status === 'sending' ? 'Sending…' : 'Send message'} <span aria-hidden="true">⟶</span></button>
+      <button type="submit" disabled={status === 'sending'}>{status === 'sending' ? 'Sending…' : 'Send message'} <ArrowIcon /></button>
       <div className="studio-contact-feedback" aria-live="polite" aria-atomic="true">
         {status === 'success' && <p>Your message has been sent. Thank you — I'll be in touch! ♡</p>}
         {status === 'error' && <p>Your message couldn't be sent. Please try again or <a href="mailto:cvitalerrico@gmail.com">email me directly</a>.</p>}

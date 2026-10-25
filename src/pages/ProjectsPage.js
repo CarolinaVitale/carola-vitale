@@ -1,3 +1,4 @@
+import ArrowIcon from '../components/ArrowIcon/ArrowIcon';
 import React, { useState } from 'react';
 import SelectedProjectGrid from '../components/Projects/SelectedProjectGrid';
 import './Home.css';
@@ -43,7 +44,7 @@ export default function ProjectsPage() {
     </section>
 
     <section className="work-projects" aria-labelledby="work-projects-title">
-      <div className="work-section-heading"><h2 id="work-projects-title">01 / Selected projects</h2><span aria-hidden="true" /><a href="#work-project-list">Explore the projects <span aria-hidden="true">↓</span></a></div>
+      <div className="work-section-heading"><h2 id="work-projects-title">01 / Selected projects</h2><span aria-hidden="true" /><a href="#work-project-list">Explore the projects <ArrowIcon direction="down" /></a></div>
       <div id="work-project-list"><SelectedProjectGrid expanded /></div>
     </section>
 

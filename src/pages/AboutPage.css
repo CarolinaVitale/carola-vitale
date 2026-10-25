@@ -217,7 +217,7 @@
   .studio-about-intro { grid-template-columns: 1fr; gap: 25px; }
   .studio-about-story h1 { font-size: clamp(39px, 10.5vw, 58px); }
   .studio-about-story > p:not(.studio-about-label):not(.studio-about-motto) { font-size: 15px; }
-  .studio-about-visual { padding: 0 40px 55px 0; max-width: 480px; width: 100%; margin: auto; }
+  .studio-about-visual { order: -1; padding: 0 40px 55px 0; max-width: 480px; width: 100%; margin: auto; }
   .studio-about-note { right: -5px; top: 45%; font-size: 20px; }
   .studio-about-bread { bottom: 0; width: 27%; }
   .studio-about-passions { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 10px; margin-top: 25px; }
