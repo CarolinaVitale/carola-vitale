@@ -36,7 +36,6 @@ export default function Navbar() {
       <nav ref={nav} aria-label="Main navigation" className={`pop-nav ${open ? 'is-open' : ''}`}>
         <Link to="/" className="pop-wordmark" onClick={close}>CAROLA VITALE <span aria-hidden="true">♡</span></Link>
         <button ref={toggle} type="button" className="pop-menu-toggle" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="pop-navigation" onClick={() => setOpen(!open)}>
-          <span>{open ? 'Close' : 'Menu'}</span>
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true" focusable="false">
             {open ? <path d="m5 5 10 10M15 5 5 15" /> : <path d="M3 6h14M3 14h14" />}
           </svg>
