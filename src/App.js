@@ -19,9 +19,21 @@ import Projects from "./pages/ProjectsPage";
 
 import ProjectInquiry from "./pages/ProjectInquiry";
 
+const ProposalPreview = process.env.NODE_ENV === "development"
+  ? React.lazy(() => import("./pages/ProposalPreview")) : null;
+
+const MarProposalPreview = process.env.NODE_ENV === "development"
+  ? React.lazy(() => import("./pages/MarProposalPreview")) : null;
+
 function AppContent() {
   const location = useLocation();
+  if (process.env.NODE_ENV === "development" && location.pathname === "/proposal-mar") {
+    return <React.Suspense fallback={<p>Cargando propuesta…</p>}><MarProposalPreview /></React.Suspense>;
+  }
   const isResumePage = location.pathname === "/resume";
+  if (process.env.NODE_ENV === "development" && location.pathname === "/proposal-preview") {
+    return <React.Suspense fallback={<p>Loading proposal…</p>}><ProposalPreview /></React.Suspense>;
+  }
 
   return (
     <>

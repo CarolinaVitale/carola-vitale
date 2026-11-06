@@ -1,0 +1,38 @@
+.mar-proposal .proposal-cover .proposal-cover-title h1 {font-size:180px; margin-top:30px; margin-bottom:30px;}
+.mar-proposal .proposal-cover .proposal-cover-subtitle {font-size:30px;}
+.mar-proposal .proposal-cover-rays {left:500px; top:45px;}
+.mar-proposal .proposal-made-for-you .proposal-service-card h3 {font-size:36px;}
+.mar-proposal .proposal-investment .proposal-prices tfoot td {font-size:19px;}
+.mar-proposal .proposal-investment .proposal-prices tfoot th {font-size:29px;}
+.mar-proposal .proposal-made-for-you .proposal-service-card {padding:12px 24px;}
+.mar-proposal .proposal-process .proposal-timeline li {min-height:95px;}
+.mar-proposal .proposal-ready .proposal-next {margin-bottom:16px;}
+.mar-proposal .proposal-ready-conditions li {padding-top:5px;padding-bottom:5px;font-size:15px;}
+.mar-proposal .proposal-ready .proposal-start-ticket {margin-top:14px;}
+.mar-proposal .proposal-ticket-main {padding-top:16px;padding-bottom:14px;}
+.mar-proposal .proposal-ticket-main h3 {font-size:34px;}
+
+/* Preserve accented Spanish words without using the demo font’s accent glyphs. */
+.mar-proposal .mar-letter {position:relative;display:inline-block;}
+.mar-proposal .mar-letter::after {content:'';position:absolute;pointer-events:none;}
+.mar-proposal .mar-letter-acute::after {width:.16em;height:.045em;border-radius:50%;background:currentColor;left:48%;top:.02em;transform:rotate(-52deg);}
+.mar-proposal .mar-letter-tilde::after {content:'~';font: .45em/1 Shababa,sans-serif;left:18%;top:-.15em;}
+.mar-proposal .mar-letter-diaeresis::after {width:.045em;height:.045em;border-radius:50%;background:currentColor;left:30%;top:.02em;box-shadow:.13em 0 currentColor;}
+
+.mar-proposal .mar-price-detail {display:block;font-size:13px;line-height:1.6;margin-top:8px;font-weight:400;}
+/* Accent wrappers must not inherit the ticket phrase’s highlight and spacing. */
+.mar-proposal .proposal-ticket-main h3 .mar-letter,
+.mar-proposal .proposal-ticket-main h3 .mar-letter > span {
+  background:transparent;
+  border-radius:0;
+  padding:0;
+  margin:0;
+}
+.mar-proposal .proposal-prices td:last-child .mar-price-detail {white-space:normal;max-width:180px;}
+@media print {
+  .mar-proposal .proposal-investment .proposal-prices {margin:18px 0;}
+  .mar-proposal .proposal-investment .proposal-prices td,
+  .mar-proposal .proposal-investment .proposal-prices th {padding:12px;}
+  .mar-proposal .proposal-investment .proposal-payment {margin:16px 0;}
+  .mar-proposal .proposal-investment .proposal-fineprint {font-size:12px;line-height:1.5;}
+}

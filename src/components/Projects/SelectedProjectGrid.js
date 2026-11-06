@@ -12,6 +12,19 @@ const projects = [
     code: 'https://github.com/CarolinaVitale/souraw.git',
   },
   {
+    name: 'SOURAW — Shopify Storefront & Ecommerce Operations',
+    image: '/projects/souraw-storefront.png',
+    imagePosition: 'center',
+    alt: 'SOURAW storefront homepage with a sourdough loaf and the headline Slow bread. Loud impact.',
+    url: 'https://souraw-carola-portfolio.vitale-carola.chatgpt.site/',
+    action: 'View case study',
+    demo: 'https://souraw-carola-portfolio.vitale-carola.chatgpt.site/demo.html',
+    category: 'Ecommerce · Shopify',
+    tools: 'Shopify Plus, Dawn, and Shopify Flow',
+    type: 'Ecommerce design and operations in a development store.',
+    description: 'I designed an ecommerce experience for SOURAW, a sourdough bread brand in Tampa. I customized the Dawn theme, organized a four-loaf catalog, and designed The Sourdough Edit campaign. I also set up and verified an inventory automation with Shopify Flow.',
+  },
+  {
     name: 'The Two of Us',
     image: '/projects/thetwofus.png',
     alt: 'The Two of Us homepage with colorful gifts and stationery',
@@ -36,14 +49,17 @@ export default function SelectedProjectGrid({ expanded = false }) {
       {projects.map(project => (
         <article className="selected-project" key={project.url}>
           <a className="selected-project-visual" href={project.url} target="_blank" rel="noopener noreferrer">
-            <img src={project.image} alt={project.alt} loading="lazy" />
+            <img src={project.image} alt={project.alt} loading="lazy" style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined} />
           </a>
           <div className="selected-project-info">
             <span className="selected-project-category">{project.category}</span>
             <h3><a href={project.url} target="_blank" rel="noopener noreferrer">{project.name}</a></h3>
             <p>{project.description}</p>
-            <a className="selected-project-arrow" href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${project.name} website`}><ArrowIcon /></a>
-            {expanded && <a className="work-project-button" href={project.url} target="_blank" rel="noopener noreferrer">View project <ArrowIcon /></a>}
+            {expanded && project.type && <p>{project.type}</p>}
+            {expanded && project.tools && <p><strong>Tools</strong> · {project.tools}</p>}
+            <a className="selected-project-arrow" href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`${project.action || 'Visit project'}: ${project.name}`}><ArrowIcon /></a>
+            {expanded && <a className="work-project-button" href={project.url} target="_blank" rel="noopener noreferrer">{project.action || 'View project'} <ArrowIcon /></a>}
+            {expanded && project.demo && <a className="selected-project-code" href={project.demo} target="_blank" rel="noopener noreferrer">Explore demo <ArrowIcon direction="upRight" /></a>}
             {project.code && <a className="selected-project-code" href={project.code} target="_blank" rel="noopener noreferrer">View code <ArrowIcon direction="upRight" /></a>}
           </div>
         </article>
