@@ -1,14 +1,16 @@
 import ArrowIcon from '../ArrowIcon/ArrowIcon';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const projects = [
   {
     name: 'Souraw',
+    caseStudy: '/projects/souraw-shopify',
     image: '/projects/souraw-full.jpg',
     alt: 'Souraw homepage featuring artisan sourdough bread',
     url: 'https://souraw.com/',
     category: 'Website · E-commerce',
-    description: 'Brand website for a Tampa sourdough bakery, designed and coded from scratch. I also built its Shopify storefront, designed The Sourdough Edit campaign and automated inventory with Shopify Flow.',
+    description: 'Brand website for a Tampa sourdough bakery, designed and coded from scratch. I also built its Shopify storefront, designed The Sourdough Edit campaign and set up an inventory workflow in Shopify Flow.',
     tools: 'Web design · Frontend · Shopify',
     action: 'View live site',
     code: 'https://github.com/CarolinaVitale/souraw.git',
@@ -52,6 +54,7 @@ export default function SelectedProjectGrid() {
             <div className="selected-project-links">
               <a className="selected-project-code" href={project.url} target="_blank" rel="noopener noreferrer">{project.action} <ArrowIcon direction="upRight" /></a>
               {project.code && <a className="selected-project-code" href={project.code} target="_blank" rel="noopener noreferrer">View code <ArrowIcon direction="upRight" /></a>}
+              {project.caseStudy && <Link className="selected-project-code" to={project.caseStudy}>Shopify case study →</Link>}
             </div>
           </div>
         </article>

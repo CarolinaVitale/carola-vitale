@@ -16,6 +16,7 @@ import CV from "./pages/CV";
 import AboutPage from "./pages/AboutPage";
 import ExperiencePage from "./pages/ExperiencePage";
 import Projects from "./pages/ProjectsPage";
+import SourawShopify from "./pages/SourawShopify";
 
 import ProjectInquiry from "./pages/ProjectInquiry";
 
@@ -47,6 +48,7 @@ function AppContent() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/experience" element={<ExperiencePage />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/souraw-shopify" element={<SourawShopify />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/start-project" element={<ProjectInquiry />} />
         <Route path="/resume" element={<CV />} />
