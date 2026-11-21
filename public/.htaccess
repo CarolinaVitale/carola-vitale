@@ -1,0 +1,17 @@
+# Entry pages for Apache/cPanel, followed by the React Router fallback.
+DirectoryIndex index.html
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  RewriteRule ^projects/?$ projects/index.html [L]
+  RewriteRule ^projects/souraw-shopify/?$ projects/souraw-shopify/index.html [L]
+
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # A missing asset must return 404, never the homepage HTML.
+  RewriteRule ^(?:images|brand|static)/ - [L]
+  RewriteRule ^ index.html [L]
+</IfModule>

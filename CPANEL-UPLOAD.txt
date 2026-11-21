@@ -1,0 +1,26 @@
+UPLOAD TO THE DOCUMENT ROOT OF carolavitale.com (usually public_html).
+
+1. Download a backup of the existing .htaccess and projects folder.
+2. Move the old projects folder OUTSIDE public_html as a backup. Replace it with
+   the new projects folder from this package. The old folder contained images;
+   the new folder contains page entry files. Do not delete the new folder.
+3. Upload carolavitale-cpanel.zip to the domain document root and extract THERE.
+   The zip has no build parent folder. Replace the existing site files.
+   Include the hidden .htaccess file (enable Show Hidden Files in cPanel).
+4. Folder permissions: 755. File permissions: 644.
+5. Check these URLs by opening each directly and refreshing:
+   https://carolavitale.com/projects
+   https://carolavitale.com/projects/souraw-shopify
+
+PACKAGE CONTENTS
+- index.html, .htaccess, asset-manifest.json
+- projects/index.html
+- projects/souraw-shopify/index.html
+- images/ (all project images are now under images/projects/)
+- static/ (compiled JavaScript, CSS and fonts)
+- brand/ and all other root assets supplied in the zip
+
+Upload the CONTENTS of build/, never src/, public/, node_modules/ or build/ itself.
+Existing server-specific .htaccess directives (HTTPS redirects, PHP handlers,
+security/caching settings) should be kept when merging with the supplied rules.
+This package was tested with Apache locally. The live server is not updated yet.

@@ -15,7 +15,7 @@ const steps = [
 function Screenshot({ name, alt, crop = false, priority = false }) {
   const [missing, setMissing] = useState(false);
   return <figure className={`shopify-screenshot${crop ? ' shopify-screenshot--crop' : ''}`}>
-    {missing ? <div className="shopify-image-placeholder" role="img" aria-label={`${alt} — screenshot pending`}><span aria-hidden="true">♡</span><p>{alt}</p><small>Screenshot coming soon</small></div> : <img src={`/projects/souraw-shopify/${name}.jpg`} alt={alt} loading={priority ? 'eager' : 'lazy'} onError={() => setMissing(true)} />}
+    {missing ? <div className="shopify-image-placeholder" role="img" aria-label={`${alt} — screenshot pending`}><span aria-hidden="true">♡</span><p>{alt}</p><small>Screenshot coming soon</small></div> : <img src={`/images/projects/souraw-shopify/${name}.jpg`} alt={alt} loading={priority ? 'eager' : 'lazy'} onError={() => setMissing(true)} />}
   </figure>;
 }
 
