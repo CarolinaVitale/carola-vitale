@@ -4,7 +4,7 @@ import React from 'react';
 const projects = [
   {
     name: 'Souraw',
-    image: '/projects/souraw.png',
+    image: '/projects/souraw-full.jpg',
     alt: 'Souraw homepage featuring artisan sourdough bread',
     url: 'https://souraw.com/',
     category: 'Website · E-commerce',
@@ -15,7 +15,7 @@ const projects = [
   },
   {
     name: 'The Two of Us',
-    image: '/projects/thetwofus.png',
+    image: '/projects/thetwofus-full.webp',
     alt: 'The Two of Us homepage with colorful gifts and stationery',
     url: 'https://thetwofus.com/',
     category: 'Brand · Website',
@@ -25,7 +25,7 @@ const projects = [
   },
   {
     name: 'Miguel Bravo',
-    image: '/projects/bymiguelbravo.png',
+    image: '/projects/bymiguelbravo-full.webp',
     alt: 'Miguel Bravo homepage featuring a private dining experience',
     url: 'https://bymiguelbravo.com/',
     category: 'Website · Private chef',

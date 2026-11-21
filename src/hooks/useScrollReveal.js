@@ -5,7 +5,7 @@ export default function useScrollReveal(root) {
     const container = root.current;
     const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
     if (!container) return undefined;
-    const elements = container.querySelectorAll('h2, .pop-about-copy > p, .home-work-intro > p, .pop-contact p, .little-things > p, .little-copy p, .pop-button, .selected-work-all, .selected-project, .pop-highlight, .home-work-line, .craft-sticker');
+    const elements = container.querySelectorAll('h2, .pop-about-copy > p, .home-work-intro > p, .pop-contact p, .little-things > p, .little-copy p, .pop-button, .selected-work-all, .selected-project, .pop-highlight, .home-work-line, .craft-sticker, .etsy-review, .instagram-stat');
     let observer;
     const showAll = () => {
       observer?.disconnect();

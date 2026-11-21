@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './HomeMotion.css';
 import { Link } from 'react-router-dom';
+import AnimatedWordmark from '../components/AnimatedWordmark';
 import CraftStickers from '../components/Projects/CraftStickers';
 import SelectedProjectGrid from '../components/Projects/SelectedProjectGrid';
 import './Home.css';
@@ -24,7 +25,7 @@ export default function Home() {
     <main ref={root} id="main-content" className="pop-home">
       <section className="pop-hero" aria-label="Carola Vitale, frontend developer and designer">
         <div className="pop-hero-copy">
-          <h1><span className="pop-sr-only">Carola Vitale — frontend developer and designer</span><img src={asset('wordmark.png')} alt="" fetchpriority="high" width="3201" height="1940" /></h1>
+          <AnimatedWordmark />
           <div className="pop-hero-intro">
             <p className="pop-tagline">Design · Develop · Create ♡</p>
             <p className="pop-introduction">I'm a frontend developer and designer who loves turning ideas into meaningful digital experiences.</p>
@@ -35,7 +36,14 @@ export default function Home() {
         <div className="pop-hero-photo">
           <img className="pop-portrait" src={asset('founder@4x.png')} alt="Illustration of Carola creating on her laptop" fetchpriority="high" width="1006" height="903" />
           <div className="pop-photo-note">Powered by<br />coffee &amp; ideas ♡</div>
-          <Doodle name="laptop-sticker@4x.png" className="hero-heart" />
+          <div className="hero-heart hero-coffee" aria-hidden="true">
+            <Doodle name="laptop-sticker@4x.png" />
+            <svg className="hero-coffee-steam" viewBox="0 0 60 80" fill="none" focusable="false">
+              <path d="M13 73C-2 60 27 51 14 36S10 15 17 6" />
+              <path d="M31 76C45 62 19 51 31 36S40 17 33 5" />
+              <path d="M48 73C34 59 60 50 48 35S44 15 51 6" />
+            </svg>
+          </div>
         </div>
       </section>
 
@@ -64,24 +72,34 @@ export default function Home() {
 
 
       <section className="little-things" id="little-things" aria-labelledby="little-things-title">
-        <SectionHeading number="04" label="Little things I make" id="little-things-title">Little things I <em className="pop-highlight">make.</em> ♡</SectionHeading>
+        <SectionHeading number="03" label="Little things I make" id="little-things-title">Little things I <em className="pop-highlight">make.</em> ♡</SectionHeading>
         <p>Beyond the screen: printables, photography and a bakery brand I love.</p>
         <div className="little-things-grid">
           <article className="etsy-card">
             <span className="selected-project-category">Etsy shop</span>
             <a className="etsy-photo" href="https://www.etsy.com/shop/Souraw" target="_blank" rel="noopener noreferrer"><img src="/brand/etsy-kit.jpg" alt="SOURAW collage on an ivory desk with illustrated stickers, gift tags and a heart-patterned coffee cup" loading="lazy" width="1200" height="1200" /><span className="etsy-sales-sticker">35+ sales · 5★</span></a>
             <div className="little-copy"><h3>Printables for bakers &amp; small businesses</h3><p>Hand-drawn cookie packaging, gift tags and thank-you cards, ready to print.</p></div><a className="pop-button yellow" href="https://www.etsy.com/shop/Souraw" target="_blank" rel="noopener noreferrer">Shop on Etsy <ArrowIcon direction="upRight" /></a>
+            <blockquote className="etsy-review">
+              <span className="etsy-review-stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <p>"Very responsive, helpful and went above and beyond helping me!"</p>
+              <cite>— Rachel, Etsy customer ♡</cite>
+            </blockquote>
           </article>
           <article className="instagram-card" aria-label="SOURAW photography on Instagram">
-            <span className="selected-project-category">On Instagram</span>
-            <h3>@souraw.us</h3>
+            <div className="instagram-profile">
+              <div className="instagram-avatar"><span aria-hidden="true">S</span><img src="/brand/ig-avatar.jpg" alt="SOURAW profile" width="200" height="200" loading="lazy" onError={event => { event.currentTarget.hidden = true; }} /></div>
+              <div className="instagram-profile-copy"><h3>@souraw.us <svg className="instagram-verified" viewBox="0 0 24 24" role="img" aria-label="Verified"><path fill="currentColor" d="m12 1 3 2 3.6.4 1.1 3.4L22 10l-1 3.5.3 3.6-3.2 1.7-2.2 2.9-3.5-.8-3.5.8-2.2-2.9L3.5 17l.3-3.6L2.8 10l2.3-3.2 1.1-3.4L9.8 3Z" /><path d="m7.5 11.8 3 3 6-6" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg></h3><p>SOURAW by Carolina Vitale</p></div>
+            </div>
+            <div className="instagram-stats"><span className="instagram-stat">2.2K followers</span><span className="instagram-stat">1.6M views in one month</span></div>
+            <div className="instagram-content">
             <div className="instagram-grid">{['SOURAW illustrated canvas bag and product tag', 'Chocolate chip cookie held above a cooling rack', 'SOURAW tiramisu with lavender packaging', 'A hand holding a SOURAW printed card with green diamonds and pink stripes', 'An open sourdough loaf beside white flowers', 'A cookie gift box with a red ribbon'].map((alt, index) => <a key={alt} href="https://www.instagram.com/souraw.us/" target="_blank" rel="noopener noreferrer"><img src={`/brand/ig-${index + 1}.jpg`} alt={alt} loading="lazy" width="600" height="600" /><span aria-hidden="true">♡</span></a>)}</div>
             <a className="pop-button pink" href="https://www.instagram.com/souraw.us/" target="_blank" rel="noopener noreferrer">Follow @souraw.us <ArrowIcon direction="upRight" /></a>
+            </div>
           </article>
         </div>
       </section>
 
-      <section className="pop-contact coral" id="contact" aria-labelledby="contact-title"><Doodle name="founder-sticker@4x.png" /><div><p className="pop-eyebrow">03 / Let’s talk</p><h2 id="contact-title">Let's make<br /><em className="pop-highlight">something great.</em></h2><p>A website, a brand, or an idea that won't leave your head.<br />I'd love to hear about it.</p></div><Link className="pop-button pink" to="/contact">Let's talk <span className="contact-heart" aria-hidden="true">♡</span> <ArrowIcon /></Link></section>
+      <section className="pop-contact coral" id="contact" aria-labelledby="contact-title"><Doodle name="founder-sticker@4x.png" /><div><p className="pop-eyebrow">04 / Let’s talk</p><h2 id="contact-title">Let's make<br /><em className="pop-highlight">something great.</em></h2><p>A website, a brand, or an idea that won't leave your head.<br />I'd love to hear about it.</p></div><Link className="pop-button pink" to="/contact">Let's talk <span className="contact-heart" aria-hidden="true">♡</span> <ArrowIcon /></Link></section>
     </main>
   );
 }
