@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './HomeMotion.css';
 import { Link } from 'react-router-dom';
+import BrandIcon from '../components/BrandIcon';
 import AnimatedWordmark from '../components/AnimatedWordmark';
 import CraftStickers from '../components/Projects/CraftStickers';
 import SelectedProjectGrid from '../components/Projects/SelectedProjectGrid';
@@ -76,9 +77,9 @@ export default function Home() {
         <p>Beyond the screen: printables, photography and a bakery brand I love.</p>
         <div className="little-things-grid">
           <article className="etsy-card">
-            <span className="selected-project-category">Etsy shop</span>
+            <span className="selected-project-category"><BrandIcon name="etsy" /> Etsy shop</span>
             <a className="etsy-photo" href="https://www.etsy.com/shop/Souraw" target="_blank" rel="noopener noreferrer"><img src="/brand/etsy-kit.jpg" alt="SOURAW collage on an ivory desk with illustrated stickers, gift tags and a heart-patterned coffee cup" loading="lazy" width="1200" height="1200" /><span className="etsy-sales-sticker">35+ sales · 5★</span></a>
-            <div className="little-copy"><h3>Printables for bakers &amp; small businesses</h3><p>Hand-drawn cookie packaging, gift tags and thank-you cards, ready to print.</p></div><a className="pop-button yellow" href="https://www.etsy.com/shop/Souraw" target="_blank" rel="noopener noreferrer">Shop on Etsy <ArrowIcon direction="upRight" /></a>
+            <div className="little-copy"><h3>Printables for bakers &amp; small businesses</h3><p>Hand-drawn cookie packaging, gift tags and thank-you cards, ready to print.</p></div><a className="pop-button yellow" href="https://www.etsy.com/shop/Souraw" target="_blank" rel="noopener noreferrer"><BrandIcon name="etsy" /> Shop on Etsy <ArrowIcon direction="upRight" /></a>
             <blockquote className="etsy-review">
               <span className="etsy-review-stars" aria-label="5 out of 5 stars">★★★★★</span>
               <p>"Very responsive, helpful and went above and beyond helping me!"</p>
@@ -86,14 +87,11 @@ export default function Home() {
             </blockquote>
           </article>
           <article className="instagram-card" aria-label="SOURAW photography on Instagram">
-            <div className="instagram-profile">
-              <div className="instagram-avatar"><span aria-hidden="true">S</span><img src="/brand/ig-avatar.jpg" alt="SOURAW profile" width="200" height="200" loading="lazy" onError={event => { event.currentTarget.hidden = true; }} /></div>
-              <div className="instagram-profile-copy"><h3>@souraw.us <svg className="instagram-verified" viewBox="0 0 24 24" role="img" aria-label="Verified"><path fill="currentColor" d="m12 1 3 2 3.6.4 1.1 3.4L22 10l-1 3.5.3 3.6-3.2 1.7-2.2 2.9-3.5-.8-3.5.8-2.2-2.9L3.5 17l.3-3.6L2.8 10l2.3-3.2 1.1-3.4L9.8 3Z" /><path d="m7.5 11.8 3 3 6-6" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg></h3><p>SOURAW by Carolina Vitale</p></div>
-            </div>
+            <a className="instagram-profile-screenshot" href="https://www.instagram.com/souraw.us/" target="_blank" rel="noopener noreferrer"><img src="/brand/ig-profile.jpg" alt="Instagram profile @souraw.us — SOURAW by Carolina Vitale: 38 posts, 2,200 followers, 18 following and 1.6M views in the last 30 days" width="1200" height="627" loading="lazy" /></a>
             <div className="instagram-stats"><span className="instagram-stat">2.2K followers</span><span className="instagram-stat">1.6M views in one month</span></div>
             <div className="instagram-content">
             <div className="instagram-grid">{['SOURAW illustrated canvas bag and product tag', 'Chocolate chip cookie held above a cooling rack', 'SOURAW tiramisu with lavender packaging', 'A hand holding a SOURAW printed card with green diamonds and pink stripes', 'An open sourdough loaf beside white flowers', 'A cookie gift box with a red ribbon'].map((alt, index) => <a key={alt} href="https://www.instagram.com/souraw.us/" target="_blank" rel="noopener noreferrer"><img src={`/brand/ig-${index + 1}.jpg`} alt={alt} loading="lazy" width="600" height="600" /><span aria-hidden="true">♡</span></a>)}</div>
-            <a className="pop-button pink" href="https://www.instagram.com/souraw.us/" target="_blank" rel="noopener noreferrer">Follow @souraw.us <ArrowIcon direction="upRight" /></a>
+            <a className="pop-button pink" href="https://www.instagram.com/souraw.us/" target="_blank" rel="noopener noreferrer"><BrandIcon name="instagram" /> Follow @souraw.us <ArrowIcon direction="upRight" /></a>
             </div>
           </article>
         </div>

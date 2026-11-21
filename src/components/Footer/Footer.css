@@ -93,3 +93,11 @@
 @media (prefers-reduced-motion: reduce) {
   .footer-wave { animation: none; transform: none; }
 }
+
+.pop-footer-links a { display: inline-flex; align-items: center; gap: 7px; }
+.pop-footer-links .brand-icon { transition: scale .2s ease; }
+.pop-footer-links a:hover .brand-icon, .pop-footer-links a:focus-visible .brand-icon { scale: 1.12; }
+@media (prefers-reduced-motion: reduce) {
+  .pop-footer-links .brand-icon { transition: none; }
+  .pop-footer-links a:hover .brand-icon, .pop-footer-links a:focus-visible .brand-icon { scale: 1; }
+}

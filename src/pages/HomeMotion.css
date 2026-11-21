@@ -254,3 +254,18 @@
 @media (max-width: 380px) {
   .instagram-stat { font-size: 15px; padding: 7px 8px; }
 }
+
+.etsy-card > .selected-project-category { display: inline-flex; align-items: center; gap: 5px; }
+.etsy-card > .selected-project-category .brand-icon { width: 14px; height: 14px; flex-basis: 14px; }
+.instagram-stats { flex-wrap: nowrap; width: 100%; gap: 7px; flex-shrink: 0; }
+.instagram-stat { white-space: nowrap; font-size: clamp(13px, 1.35vw, 17px); padding: 7px 8px; }
+.instagram-content { flex: 0 0 auto; justify-content: flex-start; }
+@media (max-width: 700px) {
+  .instagram-stat { font-size: clamp(12px, 3.5vw, 17px); padding: 7px 6px; border-width: 4px; }
+}
+
+.instagram-profile-screenshot { display: block; width: 100%; flex: none; border: 6px solid white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 10px #29458e18; }
+.instagram-profile-screenshot img { display: block; width: 100%; height: auto; object-fit: contain; }
+
+.instagram-profile-screenshot { display: block; width: 100%; flex: none; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 10px #29458e12; background: white; }
+.instagram-profile-screenshot img { display: block; width: 100%; height: auto; object-fit: contain; }
