@@ -1,0 +1,144 @@
+/* Motion is opt-in: content remains visible if scripting is unavailable. */
+.creative-ribbon {
+  background: var(--blue);
+  color: var(--cream);
+  overflow: hidden;
+  transform: rotate(-2deg);
+  margin: 40px -10px 55px;
+  padding: 18px 0;
+  font: clamp(28px, 3.5vw, 48px)/1.1 Chippie, sans-serif;
+}
+.creative-ribbon-track { display: flex; width: max-content; animation: ribbon-drift 70s linear infinite; }
+.creative-ribbon-copy { display: flex; flex: none; white-space: nowrap; }
+.creative-ribbon-copy > span { padding-right: 24px; }
+.creative-ribbon:hover .creative-ribbon-track { animation-play-state: paused; }
+@keyframes ribbon-drift { to { transform: translateX(-50%); } }
+.scroll-reveal { transition: opacity .55s ease, translate .55s cubic-bezier(.2,.8,.25,1); }
+.scroll-reveal:not(.is-revealed) { opacity: 0; translate: 0 22px; }
+.scroll-reveal.is-revealed { opacity: 1; translate: 0 0; }
+.selected-project.scroll-reveal { transition-property: opacity, translate, transform; transition-duration: .55s, .55s, .3s; transition-delay: var(--reveal-delay, 0ms), var(--reveal-delay, 0ms), 0ms; }
+.selected-project:nth-child(2) { --reveal-delay: 100ms; }
+.selected-project:nth-child(3) { --reveal-delay: 200ms; }
+.pop-highlight.scroll-reveal { opacity: 1; translate: none; }
+.pop-highlight.scroll-reveal::before { transform-origin: left; transition: scale .75s cubic-bezier(.2,.65,.3,1) .12s; }
+.pop-highlight.scroll-reveal:not(.is-revealed)::before { scale: 0 1; }
+.pop-highlight.scroll-reveal.is-revealed::before { scale: 1 1; }
+.home-work-line.scroll-reveal { opacity: .75; translate: none; transition: clip-path 1.2s ease; }
+.home-work-line.scroll-reveal:not(.is-revealed) { clip-path: inset(0 100% 0 0); }
+.home-work-line.scroll-reveal.is-revealed { clip-path: inset(0); }
+.selected-project { transition: transform .3s ease; }
+.selected-project-visual > img { transition: scale .5s ease; }
+.selected-project-links svg { color: var(--pink); transition: translate .25s ease; }
+@media (hover: hover) {
+  .selected-project:hover { transform: translateY(-6px) rotate(-1.2deg); }
+  .selected-project:hover .selected-project-visual { transform: none; }
+  .selected-project:hover .selected-project-visual > img { scale: 1.04; }
+  .selected-project:hover .selected-project-links svg { translate: 4px 0; }
+}
+.pop-contact > .pop-doodle { animation: founder-float 5s ease-in-out infinite; }
+@keyframes founder-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -9px; } }
+.pop-contact .pop-button .contact-heart { display: inline-block; font: inherit; animation: contact-heartbeat 4.5s ease-in-out infinite; }
+@keyframes contact-heartbeat { 0%, 65%, 100% { scale: 1; } 73%, 87% { scale: 1.16; } 80%, 94% { scale: 1; } }
+.little-things { padding: 24px 14px; margin: 24px auto 0; max-width: 1080px; }
+.little-things .home-section-title { font-size: clamp(32px, 4vw, 52px); line-height: 1.1; }
+.little-things > p { margin-top: 12px; font-size: 16px; line-height: 1.5; }
+.little-things-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; gap: 28px; margin-top: 22px; }
+.etsy-card, .instagram-card { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 16px; border-radius: 20px; min-width: 0; }
+.etsy-card { background: color-mix(in srgb, var(--lavender) 18%, var(--cream)); transform: rotate(-.7deg); }
+.etsy-card > .selected-project-category, .instagram-card > .selected-project-category { font-size: 11px; line-height: 1.5; }
+.etsy-photo { display: block; position: relative; align-self: center; width: min(100%, 320px); aspect-ratio: 4 / 3; border-radius: 14px; background: var(--yellow); }
+.etsy-photo img { display: block; width: 100%; height: 100%; max-height: 300px; border-radius: inherit; object-fit: cover; object-position: center 58%; }
+.etsy-sales-sticker { position: absolute; top: 10px; right: -8px; padding: 8px 12px; border-radius: 12px; background: var(--yellow); color: var(--blue); font-size: 13px; transform: rotate(5deg); }
+.little-copy h3, .instagram-card h3 { font: 28px/1.05 Chippie, sans-serif; color: var(--blue); }
+.little-copy p { font-size: 15px; line-height: 1.45; margin-top: 8px; }
+.little-things .pop-button { font-size: 19px; padding: 10px 18px; min-height: 40px; }
+.etsy-card > .pop-button { margin-top: auto; }
+.instagram-grid { display: grid; width: 100%; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; }
+.instagram-grid a { position: relative; display: block; aspect-ratio: 1; overflow: hidden; background: var(--pink); border-radius: 18px; }
+.instagram-grid a:nth-child(2n) { background: var(--yellow); }
+.instagram-grid a:nth-child(3n) { background: var(--lavender); }
+.instagram-grid img { display: block; width: 100%; height: 100%; object-fit: cover; transition: scale .4s ease; }
+.instagram-grid a > span { position: absolute; inset: 0; display: grid; place-items: center; background: #29458e35; color: var(--cream); font: 48px/1 Shababa, sans-serif; opacity: 0; transition: opacity .3s; }
+.instagram-grid a:hover img, .instagram-grid a:focus-visible img { scale: 1.05; }
+.instagram-grid a:hover > span, .instagram-grid a:focus-visible > span { opacity: 1; }
+.instagram-card > .pop-button { margin-top: 0; }
+@media (max-width: 700px) {
+  .creative-ribbon { margin: 28px -5px 38px; padding: 14px 0; }
+  .little-things { padding: 22px 0; }
+  .little-things-grid { grid-template-columns: 1fr; gap: 20px; }
+  .etsy-card { margin: 0 3px; }
+  .etsy-card, .instagram-card { padding: 14px; }
+  .etsy-photo { width: min(100%, 360px); }
+  .etsy-card > .pop-button { margin-top: 0; }
+  .instagram-grid { gap: 8px; }
+  .instagram-grid a { border-radius: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pop-home .scroll-reveal { opacity: 1 !important; translate: none !important; transition: none !important; }
+  .pop-home .pop-highlight::before { scale: 1 1 !important; transition: none !important; }
+  .pop-home .home-work-line { clip-path: none !important; }
+  .creative-ribbon-track, .pop-contact > .pop-doodle, .pop-contact .contact-heart { animation: none !important; }
+  .selected-project, .selected-project-visual, .selected-project-visual > img,
+  .selected-project-links svg, .craft-sticker, .instagram-grid img,
+  .instagram-grid a > span { transition: none !important; }
+  .selected-project:hover, .selected-project:hover .selected-project-visual { transform: none; }
+  .selected-project:hover .selected-project-visual > img,
+  .instagram-grid a:hover img, .instagram-grid a:focus-visible img { scale: 1; }
+  .selected-project:hover .selected-project-links svg { translate: none; }
+  .craft-sticker:hover { transform: rotate(var(--sticker-tilt)); }
+}
+/* Keep the Etsy crop horizontal without its source image setting the flex height. */
+.etsy-photo { width: min(100%, 400px); flex: none; }
+.etsy-photo img { position: absolute; inset: 0; }
+.little-copy h3 { font-size: 25px; }
+.little-things { padding-top: 16px; padding-bottom: 16px; }
+.little-things .pop-eyebrow { margin-bottom: 10px; }
+.little-things .home-section-title { margin-top: 0; margin-bottom: 0; }
+@media (max-width: 700px) {
+  .etsy-photo { width: min(100%, 360px); }
+}
+
+/* Keep the sticker group close to the next section. */
+.pop-home > .pop-about { padding-bottom: 16px; }
+.pop-home > .pop-about + .selected-work { margin-top: 18px; }
+.craft-sticker-group { margin-top: 22px; }
+.craft-note { position: relative; z-index: 3; display: flex; align-items: center; gap: 5px; width: max-content; color: #29458e; font: 23px/1 Chippie, sans-serif; transform: rotate(-5deg); margin: 0 0 24px 8px; }
+.craft-note svg { position: relative; top: 16px; width: 72px; height: 50px; overflow: visible; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
+.craft-stickers { display: grid; grid-template-columns: max-content max-content; align-items: start; gap: 4px 0; position: relative; z-index: 1; padding: 6px 0; }
+.craft-sticker { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 58px; padding: 10px 12px; border: 7px solid white; box-shadow: 0 4px 9px #29458e20; color: #29458e; font: 18px/1.1 Chippie, sans-serif; transform: rotate(var(--sticker-tilt)); transition: transform .25s ease, box-shadow .25s ease; }
+.craft-sticker + .craft-sticker { margin-left: -10px; }
+.craft-sticker:nth-child(1) { background: var(--pink); border-radius: 25px; --sticker-tilt: -5deg; --stick-delay: 0ms; }
+.craft-sticker:nth-child(2) { background: var(--yellow); border-radius: 60px; --sticker-tilt: 4deg; --stick-delay: 110ms; margin-top: 12px; }
+.craft-sticker:nth-child(3) { border: 0; background: none; box-shadow: none; padding: 17px 19px; --sticker-tilt: -3deg; --stick-delay: 220ms; }
+.craft-sticker:nth-child(4) { background: var(--coral); border-radius: 42% 36% 40% 34% / 46% 43% 40% 48%; --sticker-tilt: 6deg; --stick-delay: 330ms; margin-top: 12px; }
+.craft-bakery-edge { position: absolute; inset: -3px 0 0; width: 100%; height: calc(100% + 4px); fill: var(--lavender); stroke: white; stroke-width: 7px; filter: drop-shadow(0 4px 3px #29458e20); z-index: -1; }
+.craft-icon { width: 22px; height: 22px; flex-shrink: 0; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; transform: rotate(-5deg); }
+@media (hover: hover) {
+  .craft-sticker:hover { transform: translateY(-5px) rotate(0) scale(1.06); box-shadow: 0 9px 16px #29458e30; z-index: 2; }
+  .craft-sticker:nth-child(3):hover { box-shadow: none; }
+  .craft-sticker:hover .craft-bakery-edge { filter: drop-shadow(0 9px 7px #29458e30); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .craft-sticker.scroll-reveal.is-revealed { animation: stick-down .6s cubic-bezier(.2,.8,.3,1) var(--stick-delay) both; }
+}
+@keyframes stick-down {
+  0% { opacity: 0; translate: 0 -16px; scale: 1.16; }
+  65% { opacity: 1; translate: 0 2px; scale: .96; }
+  100% { opacity: 1; translate: 0 0; scale: 1; }
+}
+@media (max-width: 700px) {
+  .pop-home > .pop-about { padding-bottom: 14px; }
+  .pop-home > .pop-about .pop-about-art { order: 0; }
+  .pop-home > .pop-about .pop-about-copy { order: 1; }
+  .pop-home > .pop-about + .selected-work { margin-top: 14px; }
+  .craft-stickers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 0; }
+  .craft-sticker { font-size: clamp(14px, 3.8vw, 18px); padding: 9px 7px; gap: 5px; min-width: 0; }
+  .craft-sticker + .craft-sticker { margin-left: -10px; }
+  .craft-sticker:nth-child(3) { padding: 17px 10px; margin-left: 0; }
+  .craft-icon { width: 19px; height: 19px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .craft-sticker { animation: none !important; transition: none !important; translate: none !important; scale: 1 !important; opacity: 1 !important; }
+  .craft-sticker:hover { transform: rotate(var(--sticker-tilt)); box-shadow: 0 4px 9px #29458e20; }
+  .craft-sticker:hover .craft-bakery-edge { filter: drop-shadow(0 4px 3px #29458e20); }
+}

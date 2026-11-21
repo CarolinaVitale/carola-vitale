@@ -1589,3 +1589,24 @@
     margin: 8px 0;
   }
 }
+
+.selected-project-info > .selected-project-tools {
+  margin-top: 12px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  opacity: .65;
+}
+.selected-project-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 14px;
+}
+.selected-project-links .selected-project-code {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 0;
+}

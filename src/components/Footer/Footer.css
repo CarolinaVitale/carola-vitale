@@ -43,7 +43,7 @@
   }
 }
 
-/* Organic lavender edge inspired by the supplied pastel mockup. */
+/* Two periodic wave layers overlap the footer by 2px to avoid a seam. */
 .pop-footer {
   position: relative;
   margin-top: 75px;
@@ -51,12 +51,45 @@
   padding-top: 36px;
   isolation: isolate;
 }
-.pop-footer::before {
-  content: '';
+.footer-waves {
   position: absolute;
-  top: -34px;
+  top: -42px;
   left: 0;
   width: 100%;
-  height: 36px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cpath fill='%23B6A0E8' d='M0 32C100 -20 160 0 260 22S420 38 520 15S670 38 780 20S960 -18 1060 10S1150 18 1200 32V40H0Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  height: 44px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.footer-wave {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 200%;
+  max-width: none;
+  height: 100%;
+}
+.footer-wave-back {
+  fill: color-mix(in srgb, var(--lavender) 70%, var(--cream));
+  opacity: .5;
+  animation: footer-wave-left 18s linear infinite;
+}
+.footer-wave-front {
+  height: 82%;
+  fill: var(--lavender);
+  animation: footer-wave-right 12s linear infinite;
+}
+@keyframes footer-wave-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes footer-wave-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+@media (max-width: 600px) {
+  .footer-waves { top: -26px; height: 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .footer-wave { animation: none; transform: none; }
 }

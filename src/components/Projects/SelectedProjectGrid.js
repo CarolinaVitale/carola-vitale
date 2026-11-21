@@ -7,60 +7,52 @@ const projects = [
     image: '/projects/souraw.png',
     alt: 'Souraw homepage featuring artisan sourdough bread',
     url: 'https://souraw.com/',
-    category: 'E-commerce / Sourdough',
-    description: 'A warm, expressive website for artisan sourdough bread, crafted with intention and personality.',
+    category: 'Website · E-commerce',
+    description: 'Brand website for a Tampa sourdough bakery, designed and coded from scratch. I also built its Shopify storefront, designed The Sourdough Edit campaign and automated inventory with Shopify Flow.',
+    tools: 'Web design · Frontend · Shopify',
+    action: 'View live site',
     code: 'https://github.com/CarolinaVitale/souraw.git',
-  },
-  {
-    name: 'SOURAW — Shopify Storefront & Ecommerce Operations',
-    image: '/projects/souraw-storefront.png',
-    imagePosition: 'center',
-    alt: 'SOURAW storefront homepage with a sourdough loaf and the headline Slow bread. Loud impact.',
-    url: 'https://souraw-carola-portfolio.vitale-carola.chatgpt.site/',
-    action: 'View case study',
-    demo: 'https://souraw-carola-portfolio.vitale-carola.chatgpt.site/demo.html',
-    category: 'Ecommerce · Shopify',
-    tools: 'Shopify Plus, Dawn, and Shopify Flow',
-    type: 'Ecommerce design and operations in a development store.',
-    description: 'I designed an ecommerce experience for SOURAW, a sourdough bread brand in Tampa. I customized the Dawn theme, organized a four-loaf catalog, and designed The Sourdough Edit campaign. I also set up and verified an inventory automation with Shopify Flow.',
   },
   {
     name: 'The Two of Us',
     image: '/projects/thetwofus.png',
     alt: 'The Two of Us homepage with colorful gifts and stationery',
     url: 'https://thetwofus.com/',
-    category: 'Website / Gifts & stationery',
-    description: 'A colorful digital home for thoughtful gifts, little details, and everyday joy.',
+    category: 'Brand · Website',
+    description: 'Co-founder & creative lead of a gift and stationery brand. I created the visual identity, product photography and website.',
+    tools: 'Branding · Web design · Photography',
+    action: 'View live site',
   },
   {
-    name: 'by Miguel Bravo',
+    name: 'Miguel Bravo',
     image: '/projects/bymiguelbravo.png',
-    alt: 'by Miguel Bravo homepage featuring a private dining experience',
+    alt: 'Miguel Bravo homepage featuring a private dining experience',
     url: 'https://bymiguelbravo.com/',
-    category: 'Website / Private chef',
-    description: 'A personal website for private dining, catering, and pop-up dinners with chef Miguel Bravo.',
+    category: 'Website · Private chef',
+    description: 'Personal website for a private chef: private dining, catering and pop-up dinners, designed to feel as warm as his table.',
+    tools: 'Web design · Frontend',
+    action: 'View live site',
     code: 'https://github.com/CarolinaVitale/bymiguelbravo',
   },
 ];
 
-export default function SelectedProjectGrid({ expanded = false }) {
+export default function SelectedProjectGrid() {
   return (
     <div className="selected-work-grid">
       {projects.map(project => (
         <article className="selected-project" key={project.url}>
           <a className="selected-project-visual" href={project.url} target="_blank" rel="noopener noreferrer">
-            <img src={project.image} alt={project.alt} loading="lazy" style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined} />
+            <img src={project.image} alt={project.alt} loading="lazy" />
           </a>
           <div className="selected-project-info">
             <span className="selected-project-category">{project.category}</span>
             <h3><a href={project.url} target="_blank" rel="noopener noreferrer">{project.name}</a></h3>
             <p>{project.description}</p>
-            {expanded && project.type && <p>{project.type}</p>}
-            {expanded && project.tools && <p><strong>Tools</strong> · {project.tools}</p>}
-            <a className="selected-project-arrow" href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`${project.action || 'Visit project'}: ${project.name}`}><ArrowIcon /></a>
-            {expanded && <a className="work-project-button" href={project.url} target="_blank" rel="noopener noreferrer">{project.action || 'View project'} <ArrowIcon /></a>}
-            {expanded && project.demo && <a className="selected-project-code" href={project.demo} target="_blank" rel="noopener noreferrer">Explore demo <ArrowIcon direction="upRight" /></a>}
-            {project.code && <a className="selected-project-code" href={project.code} target="_blank" rel="noopener noreferrer">View code <ArrowIcon direction="upRight" /></a>}
+            <p className="selected-project-tools">{project.tools}</p>
+            <div className="selected-project-links">
+              <a className="selected-project-code" href={project.url} target="_blank" rel="noopener noreferrer">{project.action} <ArrowIcon direction="upRight" /></a>
+              {project.code && <a className="selected-project-code" href={project.code} target="_blank" rel="noopener noreferrer">View code <ArrowIcon direction="upRight" /></a>}
+            </div>
           </div>
         </article>
       ))}

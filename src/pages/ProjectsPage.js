@@ -1,8 +1,10 @@
 import ArrowIcon from '../components/ArrowIcon/ArrowIcon';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import SelectedProjectGrid from '../components/Projects/SelectedProjectGrid';
 import './Home.css';
 import './ProjectsPage.css';
+import './HomeMotion.css';
+import useScrollReveal from '../hooks/useScrollReveal';
 
 const craft = [
   ['code@4x.png', 'Frontend development', 'Responsive websites and interactive interfaces.'],
@@ -36,8 +38,10 @@ const tools = [
 ];
 
 export default function ProjectsPage() {
+  const root = useRef(null);
+  useScrollReveal(root);
   const [skillType, setSkillType] = useState('craft');
-  return <main className="pop-home work-page">
+  return <main ref={root} className="pop-home work-page">
     <section className="work-intro" aria-labelledby="work-page-title">
       <div><p className="work-eyebrow">02 / Work</p><h1 id="work-page-title">Projects, skills<br />and everything<br />in between. ♡</h1></div>
       <div className="work-intro-copy"><p>Here you'll find a mix of selected projects, the skills I work with, and the tools I use to bring ideas to life.</p><p>From websites and brands to content and creative experiments, this is a space that brings together the different ways I like to create.</p><img className="work-squiggle" src="/brand/work-line-yellow@4x.png" alt="" width="4026" height="536" /></div>
@@ -45,7 +49,7 @@ export default function ProjectsPage() {
 
     <section className="work-projects" aria-labelledby="work-projects-title">
       <div className="work-section-heading"><h2 id="work-projects-title">01 / Selected projects</h2><span aria-hidden="true" /><a href="#work-project-list">Explore the projects <ArrowIcon direction="down" /></a></div>
-      <div id="work-project-list"><SelectedProjectGrid expanded /></div>
+      <div id="work-project-list"><SelectedProjectGrid /></div>
     </section>
 
     <section className="work-skills" aria-labelledby="work-skills-title">
