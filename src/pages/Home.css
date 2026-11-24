@@ -1610,3 +1610,30 @@
   gap: 5px;
   margin-top: 0;
 }
+
+/* Shared home container: sections inherit the Selected projects edges. */
+.pop-home > .selected-work, .pop-home > .testimonials, .pop-home > .little-things {
+  width: 100%; max-width: none; margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0;
+  --home-project-gap: 26px;
+}
+.pop-home > .selected-work .selected-work-grid { gap: var(--home-project-gap); }
+@media (max-width: 1050px) { .pop-home > .selected-work, .pop-home > .testimonials { --home-project-gap: 16px; } }
+@media (max-width: 700px) { .pop-home > .selected-work .selected-work-grid { gap: 25px; } }
+
+/* A full-bleed lavender island with content on the shared home edges. */
+.pop-home > .little-things { position: relative; isolation: isolate; margin-top: 70px; margin-bottom: 70px; padding-top: 40px; padding-bottom: 40px; --island-fill: #f0eafa; }
+.little-things::before { content: ''; position: absolute; z-index: -1; top: 0; bottom: 0; width: 100vw; left: 50%; transform: translateX(-50%); background: var(--island-fill); }
+.little-island-wave { position: absolute; z-index: -1; width: 100vw; max-width: none; height: 32px; left: 50%; transform: translateX(-50%); fill: var(--island-fill); pointer-events: none; }
+.little-island-wave--top { top: -31px; }
+.little-island-wave--bottom { bottom: -31px; transform: translateX(-50%) rotate(180deg); }
+.little-things-layout { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 7fr); gap: 30px; align-items: start; }
+.little-things-intro { position: sticky; top: 120px; }
+.little-things-intro > p { font-size: 16px; line-height: 1.6; margin-top: 18px; }
+.little-things .home-section-title { font-size: clamp(32px, 3.5vw, 52px); }
+.little-things-layout > .little-things-grid { margin-top: 0; gap: 16px; }
+.little-things-layout .etsy-card, .little-things-layout .instagram-card { padding: 12px; }
+.little-things-layout .instagram-stats { gap: 4px; }
+.little-things-layout .instagram-stat { font-size: clamp(11px, 1.05vw, 16px); padding: 7px 5px; border-width: 4px; }
+.little-things-layout .pop-button { font-size: clamp(16px, 1.45vw, 19px); padding: 10px 12px; gap: 10px; }
+@media (max-width: 1000px) { .little-things-layout { grid-template-columns: 1fr; } .little-things-intro { position: static; } .little-things-layout .instagram-stat { font-size: 16px; } }
+@media (max-width: 700px) { .little-things-layout > .little-things-grid { grid-template-columns: 1fr; gap: 24px; } .little-things-layout .instagram-stat { font-size: clamp(12px, 3.5vw, 17px); } .pop-home > .little-things { padding-top: 24px; padding-bottom: 24px; } .little-island-wave { height: 24px; } .little-island-wave--top { top: -23px; } .little-island-wave--bottom { bottom: -23px; } }

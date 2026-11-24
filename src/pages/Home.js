@@ -76,8 +76,8 @@ export default function Home() {
       <Testimonials />
 
       <section className="little-things" id="little-things" aria-labelledby="little-things-title">
-        <SectionHeading number="03" label="Little things I make" id="little-things-title">Little things I <em className="pop-highlight">make.</em> ♡</SectionHeading>
-        <p>Beyond the screen: printables, photography and a bakery brand I love.</p>
+        <div className="little-things-layout"><div className="little-things-intro"><SectionHeading number="04" label="Little things I make" id="little-things-title">Little things I <em className="pop-highlight">make.</em> ♡</SectionHeading>
+        <p>Beyond the screen: printables, photography and a bakery brand I love.</p></div>
         <div className="little-things-grid">
           <article className="etsy-card">
             <span className="selected-project-category"><BrandIcon name="etsy" /> Etsy shop</span>
@@ -94,16 +94,18 @@ export default function Home() {
               <div className="instagram-avatar"><img src="/brand/ig-avatar.png?v=artboard2" alt="Carolina Vitale, SOURAW" width="200" height="200" loading="lazy" /></div>
               <div className="instagram-profile-copy"><h3>@souraw.us <svg className="instagram-verified" viewBox="0 0 24 24" role="img" aria-label="Verified"><path fill="currentColor" d="m12 1 3 2 3.6.4 1.1 3.4L22 10l-1 3.5.3 3.6-3.2 1.7-2.2 2.9-3.5-.8-3.5.8-2.2-2.9L3.5 17l.3-3.6L2.8 10l2.3-3.2 1.1-3.4L9.8 3Z" /><path d="m7.5 11.8 3 3 6-6" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg></h3><p>SOURAW by Carolina Vitale</p></div>
             </div>
-            <div className="instagram-stats"><span className="instagram-stat">2.2K followers</span><span className="instagram-stat">1.6M views in one month</span></div>
+            <div className="instagram-stats"><span className="instagram-stat">2.5K followers</span><span className="instagram-stat">1.7M views in one month</span></div>
             <div className="instagram-content">
             <div className="instagram-grid">{['SOURAW illustrated canvas bag and product tag', 'Chocolate chip cookie held above a cooling rack', 'SOURAW tiramisu with lavender packaging', 'A hand holding a SOURAW printed card with green diamonds and pink stripes', 'An open sourdough loaf beside white flowers', 'A cookie gift box with a red ribbon'].map((alt, index) => <a key={alt} href="https://www.instagram.com/souraw.us/" target="_blank" rel="noopener noreferrer"><img src={`/brand/ig-${index + 1}.jpg`} alt={alt} loading="lazy" width="600" height="600" /><span aria-hidden="true">♡</span></a>)}</div>
             <a className="pop-button pink" href="https://www.instagram.com/souraw.us/" target="_blank" rel="noopener noreferrer"><BrandIcon name="instagram" /> Follow @souraw.us <ArrowIcon direction="upRight" /></a>
             </div>
           </article>
-        </div>
+        </div></div>
+        <svg className="little-island-wave little-island-wave--top" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20C100 0 200 0 300 20S500 40 600 20C700 0 800 0 900 20S1100 40 1200 20V40H0Z" /></svg>
+        <svg className="little-island-wave little-island-wave--bottom" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20C100 0 200 0 300 20S500 40 600 20C700 0 800 0 900 20S1100 40 1200 20V40H0Z" /></svg>
       </section>
 
-      <section className="pop-contact coral" id="contact" aria-labelledby="contact-title"><Doodle name="founder-sticker@4x.png" /><div><p className="pop-eyebrow">04 / Let’s talk</p><h2 id="contact-title">Let's make<br /><em className="pop-highlight">something great.</em></h2><p>A website, a brand, or an idea that won't leave your head.<br />I'd love to hear about it.</p></div><Link className="pop-button pink" to="/contact">Let's talk <span className="contact-heart" aria-hidden="true">♡</span> <ArrowIcon /></Link></section>
+      <section className="pop-contact coral" id="contact" aria-labelledby="contact-title"><Doodle name="founder-sticker@4x.png" /><div><p className="pop-eyebrow">05 / Let’s talk</p><h2 id="contact-title">Let's make<br /><em className="pop-highlight">something great.</em></h2><p>A website, a brand, or an idea that won't leave your head.<br />I'd love to hear about it.</p></div><Link className="pop-button pink" to="/contact">Let's talk <span className="contact-heart" aria-hidden="true">♡</span> <ArrowIcon /></Link></section>
     </main>
   );
 }
