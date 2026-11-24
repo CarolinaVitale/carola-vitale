@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import BrandIcon from '../components/BrandIcon';
 import AnimatedWordmark from '../components/AnimatedWordmark';
 import CraftStickers from '../components/Projects/CraftStickers';
+import Testimonials from '../components/Testimonials';
 import SelectedProjectGrid from '../components/Projects/SelectedProjectGrid';
 import './Home.css';
 
@@ -71,6 +72,8 @@ export default function Home() {
         <SelectedProjectGrid />
       </section>
 
+
+      <Testimonials />
 
       <section className="little-things" id="little-things" aria-labelledby="little-things-title">
         <SectionHeading number="03" label="Little things I make" id="little-things-title">Little things I <em className="pop-highlight">make.</em> ♡</SectionHeading>

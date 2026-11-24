@@ -36,3 +36,8 @@
   .shopify-case-actions .pop-button { font-size: 20px; }
   .shopify-image-placeholder { min-height: 220px; padding: 24px; }
 }
+
+.shopify-step-images { min-width: 0; }
+.shopify-product-detail { width: 80%; margin: 22px auto 0; }
+.shopify-image-caption { font-size: 13px; line-height: 1.6; margin-top: 12px; text-align: center; }
+@media (max-width: 700px) { .shopify-product-detail { width: 88%; } }

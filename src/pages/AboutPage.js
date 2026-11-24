@@ -1,5 +1,8 @@
 import ArrowIcon from '../components/ArrowIcon/ArrowIcon';
-import React from 'react';
+import React, { useRef } from 'react';
+import useScrollReveal from '../hooks/useScrollReveal';
+import './HomeMotion.css';
+import './InnerPageMotion.css';
 import Offering from './Offering';
 import './AboutPage.css';
 
@@ -13,8 +16,10 @@ const passions = [
 ];
 
 export default function AboutPage() {
+  const root = useRef(null);
+  useScrollReveal(root);
   return (
-    <main className="studio-about">
+    <main ref={root} className="studio-about inner-motion">
       <section className="studio-about-intro" aria-labelledby="studio-about-title">
         <div className="studio-about-story">
           <p className="studio-about-label">01 / About me</p>
@@ -47,7 +52,7 @@ export default function AboutPage() {
       <Offering />
 
       <section className="studio-about-world" aria-labelledby="studio-world-title">
-        <h2 id="studio-world-title">A little more<br />of my world ♡ <span aria-hidden="true">⤴</span></h2>
+        <h2 id="studio-world-title">A little more<br />of my world ♡ <svg className="world-drawn-arrow draw-reveal" viewBox="0 0 80 60" fill="none" aria-hidden="true"><path d="M5 52C38 57 60 35 66 9M51 18L67 7L75 25" /></svg></h2>
         <a className="studio-world-card studio-world-souraw" href="https://www.instagram.com/souraw.us/" target="_blank" rel="noopener noreferrer">
           <div><h3>@souraw.us <ArrowIcon direction="upRight" /></h3><p>Sourdough, entrepreneurship<br />and creative content.</p></div>
           <img src={art('bread-sticker@4x.png')} alt="" loading="lazy" />

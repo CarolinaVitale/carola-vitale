@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 
-export default function useScrollReveal(root) {
+export default function useScrollReveal(root, refreshKey) {
   useEffect(() => {
     const container = root.current;
     const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
     if (!container) return undefined;
-    const elements = container.querySelectorAll('h2, .pop-about-copy > p, .home-work-intro > p, .pop-contact p, .little-things > p, .little-copy p, .pop-button, .selected-work-all, .selected-project, .pop-highlight, .home-work-line, .craft-sticker, .etsy-review, .instagram-stat, .case-reveal');
+    const elements = container.querySelectorAll('h2, .pop-about-copy > p, .home-work-intro > p, .pop-contact p, .little-things > p, .little-copy p, .pop-button, .selected-work-all, .selected-project, .pop-highlight, .home-work-line, .craft-sticker, .etsy-review, .instagram-stat, .case-reveal, .testimonial-note, .inner-motion h1, .inner-motion h3, .inner-motion p, .inner-motion button, .inner-motion a, .inner-motion img, .inner-motion article, .inner-motion .work-tool, .draw-reveal, .studio-contact-form-panel');
     let observer;
     const showAll = () => {
       observer?.disconnect();
@@ -22,7 +22,7 @@ export default function useScrollReveal(root) {
       }, { threshold: 0.12 });
       elements.forEach(element => {
         element.classList.add('scroll-reveal');
-        observer.observe(element);
+        if (!element.classList.contains('is-revealed')) observer.observe(element);
       });
     }
     const onPreferenceChange = () => { if (preference.matches) showAll(); };
@@ -31,5 +31,5 @@ export default function useScrollReveal(root) {
       observer?.disconnect();
       preference.removeEventListener('change', onPreferenceChange);
     };
-  }, [root]);
+  }, [root, refreshKey]);
 }

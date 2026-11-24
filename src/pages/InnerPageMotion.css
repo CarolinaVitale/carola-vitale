@@ -1,0 +1,49 @@
+/* Reuse HomeMotion's reveal, stick-down, founder-float and marker animations. */
+.inner-motion .scroll-reveal { transition-delay: var(--inner-delay, 0ms); }
+.inner-motion .draw-reveal.scroll-reveal { opacity: 1; translate: none; transition: clip-path 1.2s ease; }
+.inner-motion .draw-reveal:not(.is-revealed) { clip-path: inset(0 100% 0 0); }
+.inner-motion .draw-reveal.is-revealed { clip-path: inset(0); }
+.inner-motion .studio-about-motto::after,
+.inner-motion .pop-service h3::after { transform-origin: left; transition: scale .75s cubic-bezier(.2,.65,.3,1) .12s; }
+.inner-motion .studio-about-motto.scroll-reveal:not(.is-revealed)::after,
+.inner-motion .pop-service h3.scroll-reveal:not(.is-revealed)::after { scale: 0 1; }
+.world-drawn-arrow { display: inline-block; width: 75px; height: 58px; vertical-align: middle; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.studio-about-passions article:nth-child(2), .pop-services article:nth-child(2), .work-skill-card:nth-child(2), .work-tool:nth-child(2) { --inner-delay: 100ms; }
+.studio-about-passions article:nth-child(3), .pop-services article:nth-child(3), .work-skill-card:nth-child(3), .work-tool:nth-child(3) { --inner-delay: 200ms; }
+.studio-about-passions article:nth-child(4), .pop-services article:nth-child(4), .work-skill-card:nth-child(4), .work-tool:nth-child(4) { --inner-delay: 300ms; }
+.studio-about-passions article:nth-child(5), .work-skill-card:nth-child(5), .work-tool:nth-child(5) { --inner-delay: 400ms; }
+.work-skill-card:nth-child(6), .work-tool:nth-child(6) { --inner-delay: 500ms; }
+.work-tool:nth-child(n+7) { --inner-delay: 200ms; }
+.work-tool:nth-child(n+10) { --inner-delay: 400ms; }
+.inner-motion .studio-world-card { transition: transform .3s ease, box-shadow .3s ease, opacity .55s ease, translate .55s ease; }
+.inner-motion .work-skill-card { transition: transform .3s ease, opacity .55s ease, translate .55s ease; }
+.work-page .work-skill-switch { position: relative; isolation: isolate; }
+.work-page .work-skill-switch::before { content: ''; position: absolute; z-index: -1; inset: 0 auto 0 0; width: 50%; border-radius: inherit; background: var(--pink); transition: transform .3s ease; }
+.work-page .work-skill-switch.is-soft::before { transform: translateX(100%); }
+.work-page .work-skill-switch button { flex: 1; min-width: 120px; position: relative; }
+.work-page .work-skill-switch button[aria-pressed="true"] { background: transparent; }
+.work-skill-grid { transition: opacity .18s ease, translate .18s ease; }
+.work-skill-grid.is-leaving { opacity: 0; translate: 0 8px; }
+@media (prefers-reduced-motion: no-preference) {
+  .studio-about-passions img.scroll-reveal.is-revealed, .work-tool.scroll-reveal.is-revealed { animation: stick-down .6s cubic-bezier(.2,.8,.3,1) var(--inner-delay, 0ms) both; }
+  .inner-motion .pop-service > img { animation: founder-float 5s ease-in-out infinite; }
+  .inner-motion .pop-service:nth-child(2) > img { animation-duration: 5.8s; animation-delay: -1s; }
+  .inner-motion .pop-service:nth-child(3) > img { animation-duration: 4.6s; animation-delay: -2s; }
+  .inner-motion .pop-service:nth-child(4) > img { animation-duration: 6.2s; animation-delay: -3s; }
+  .work-skill-card.scroll-reveal.is-revealed { animation: review-stick .5s ease-out var(--inner-delay, 0ms) both; }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .studio-about-passions article:hover img.scroll-reveal.is-revealed, .studio-world-card:hover img, .work-skill-card:hover img { animation: inner-wiggle .65s ease-in-out; }
+  .inner-motion .studio-world-card:hover { transform: translateY(-6px) rotate(-1deg); box-shadow: 0 8px 18px #29458e20; }
+  .inner-motion .work-skill-card:hover { transform: translateY(-6px) rotate(-1deg); }
+  .work-tool:hover img { animation: inner-tool-hop .5s ease-out; }
+}
+@keyframes inner-wiggle { 0%,100% { rotate: 0deg; } 30% { rotate: -5deg; } 65% { rotate: 4deg; } }
+@keyframes inner-tool-hop { 0%,100% { translate: 0 0; rotate: 0deg; } 45% { translate: 0 -8px; rotate: -6deg; } }
+@media (prefers-reduced-motion: reduce) {
+  .inner-motion .scroll-reveal { opacity: 1 !important; translate: none !important; scale: 1 !important; animation: none !important; transition: none !important; }
+  .inner-motion .draw-reveal { clip-path: none !important; }
+  .inner-motion .pop-highlight::before, .inner-motion .studio-about-motto::after, .inner-motion .pop-service h3::after { scale: 1 1 !important; transition: none !important; }
+  .inner-motion .studio-world-card:hover, .inner-motion .work-skill-card:hover { transform: none; box-shadow: none; }
+  .work-skill-grid.is-leaving { opacity: 1; translate: none; }
+}

@@ -1,9 +1,10 @@
 import ArrowIcon from '../components/ArrowIcon/ArrowIcon';
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import SelectedProjectGrid from '../components/Projects/SelectedProjectGrid';
 import './Home.css';
 import './ProjectsPage.css';
 import './HomeMotion.css';
+import './InnerPageMotion.css';
 import useScrollReveal from '../hooks/useScrollReveal';
 
 const craft = [
@@ -39,12 +40,25 @@ const tools = [
 
 export default function ProjectsPage() {
   const root = useRef(null);
-  useScrollReveal(root);
   const [skillType, setSkillType] = useState('craft');
-  return <main ref={root} className="pop-home work-page">
+  const [selectedSkill, setSelectedSkill] = useState('craft');
+  const [leaving, setLeaving] = useState(false);
+  const switchTimer = useRef(null);
+  useEffect(() => () => clearTimeout(switchTimer.current), []);
+  useScrollReveal(root, skillType);
+  const switchSkills = next => {
+    clearTimeout(switchTimer.current);
+    setSelectedSkill(next);
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setSkillType(next); setLeaving(false); return;
+    }
+    setLeaving(true);
+    switchTimer.current = setTimeout(() => { setSkillType(next); setLeaving(false); }, 180);
+  };
+  return <main ref={root} className="pop-home work-page inner-motion">
     <section className="work-intro" aria-labelledby="work-page-title">
       <div><p className="work-eyebrow">02 / Work</p><h1 id="work-page-title">Projects, skills<br />and everything<br />in between. ♡</h1></div>
-      <div className="work-intro-copy"><p>Here you'll find a mix of selected projects, the skills I work with, and the tools I use to bring ideas to life.</p><p>From websites and brands to content and creative experiments, this is a space that brings together the different ways I like to create.</p><img className="work-squiggle" src="/brand/work-line-yellow@4x.png" alt="" width="4026" height="536" /></div>
+      <div className="work-intro-copy"><p>Here you'll find a mix of selected projects, the skills I work with, and the tools I use to bring ideas to life.</p><p>From websites and brands to content and creative experiments, this is a space that brings together the different ways I like to create.</p><img className="work-squiggle draw-reveal" src="/brand/work-line-yellow@4x.png" alt="" width="4026" height="536" /></div>
     </section>
 
     <section className="work-projects" aria-labelledby="work-projects-title">
@@ -53,8 +67,8 @@ export default function ProjectsPage() {
     </section>
 
     <section className="work-skills" aria-labelledby="work-skills-title">
-      <div className="work-section-heading"><h2 id="work-skills-title">02 / What I do</h2><span aria-hidden="true" /><div className="work-skill-switch" role="group" aria-label="Choose skill category"><button type="button" aria-pressed={skillType === 'craft'} onClick={() => setSkillType('craft')}>Craft skills</button><button type="button" aria-pressed={skillType === 'soft'} onClick={() => setSkillType('soft')}>Soft skills</button></div></div>
-      <div className="work-skill-grid">{(skillType === 'craft' ? craft : soft).map(([image, title, copy]) => <article className="work-skill-card" key={title}><img src={`/brand/${image}`} alt="" loading="lazy" /><h3>{title}</h3><p>{copy}</p></article>)}</div>
+      <div className="work-section-heading"><h2 id="work-skills-title">02 / What I do</h2><span aria-hidden="true" /><div className={`work-skill-switch ${selectedSkill === 'soft' ? 'is-soft' : ''}`} role="group" aria-label="Choose skill category"><button type="button" aria-pressed={selectedSkill === 'craft'} onClick={() => switchSkills('craft')}>Craft skills</button><button type="button" aria-pressed={selectedSkill === 'soft'} onClick={() => switchSkills('soft')}>Soft skills</button></div></div>
+      <div className={`work-skill-grid ${leaving ? 'is-leaving' : ''}`} key={skillType}>{(skillType === 'craft' ? craft : soft).map(([image, title, copy]) => <article className="work-skill-card" key={title}><img src={`/brand/${image}`} alt="" loading="lazy" /><h3>{title}</h3><p>{copy}</p></article>)}</div>
     </section>
 
     <section className="work-tools" aria-labelledby="work-tools-title">

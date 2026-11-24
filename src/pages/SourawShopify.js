@@ -6,8 +6,8 @@ import './HomeMotion.css';
 import './SourawShopify.css';
 
 const steps = [
-  { title: 'Custom theme', text: "I customized Shopify's Dawn theme with custom Liquid sections — header, footer and catalog — so the store matches SOURAW's bold, warm brand.", image: 'home', alt: 'SOURAW Shopify header and homepage hero', crop: true },
-  { title: 'Product catalog', text: 'I organized a four-loaf catalog with clear product pages: photography, price, story and ingredients.', image: 'product', alt: 'SOURAW Shopify product page with bread photography and product details' },
+  { title: 'Custom theme', text: "I customized Shopify's Dawn theme with custom Liquid sections — header, footer and catalog — so the store matches SOURAW's bold, warm brand.", image: 'theme', alt: 'SOURAW custom theme featuring the green In the spotlight / 5 Roots section' },
+  { title: 'Product catalog', text: 'I organized a four-loaf catalog with clear product pages: photography, price, story and ingredients.', image: 'catalog', alt: 'SOURAW four-loaf catalog: Meet your next favorite', detail: true },
   { title: 'The Sourdough Edit', text: 'A campaign landing page introducing the four loaves: four different personalities, one obsession with doing things the slow way.', image: 'campaign', alt: 'The Sourdough Edit campaign introducing four sourdough loaves' },
   { title: 'Inventory workflow', text: "I built and tested a Shopify Flow workflow: when a loaf's stock drops below 3 units, the product is automatically tagged for review, so it never sells out unnoticed.", image: 'flow', alt: 'Shopify Flow inventory workflow with a stock threshold and product review tag' },
 ];
@@ -34,8 +34,8 @@ export default function SourawShopify() {
     <section className="shopify-process" aria-labelledby="shopify-process-title">
       <h2 id="shopify-process-title">What I <em className="pop-highlight">did.</em> ♡</h2>
       {steps.map((step, index) => <article className="shopify-step" key={step.image + step.title}>
-        <div className="shopify-step-copy case-reveal"><p className="shopify-step-number">0{index + 1} ·</p><h3>{step.title}</h3><p>{step.text}</p></div>
-        <div className="case-reveal"><Screenshot name={step.image} alt={step.alt} crop={step.crop} /></div>
+        <div className="shopify-step-copy case-reveal"><p className="shopify-step-number">0{index + 1}</p><h3>{step.title}</h3><p>{step.text}</p></div>
+        <div className="shopify-step-images case-reveal"><Screenshot name={step.image} alt={step.alt} crop={step.crop} />{step.detail && <div className="shopify-product-detail"><Screenshot name="product" alt="SOURAW product page showing photography, price, story and ingredients" /><p className="shopify-image-caption">Product page: photography, price, story and ingredients.</p></div>}</div>
       </article>)}
     </section>
     <aside className="etsy-review shopify-preview-note case-reveal"><p>This store is in development preview, so it's password-protected. These screenshots show the work in progress. ♡</p></aside>

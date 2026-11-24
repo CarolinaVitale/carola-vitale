@@ -1,11 +1,29 @@
 import ArrowIcon from '../components/ArrowIcon/ArrowIcon';
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
+import useScrollReveal from '../hooks/useScrollReveal';
+import './HomeMotion.css';
+import './InnerPageMotion.css';
+import './ContactMotion.css';
 import { Link } from 'react-router-dom';
 import ContactMe from '../components/ContactForm/ContactForm';
 import './ContactPage.css';
 
 export default function ContactPage() {
-  return <main className="studio-contact">
+  const root = useRef(null);
+  const [copied, setCopied] = useState(false);
+  const [copyError, setCopyError] = useState(false);
+  const copyTimer = useRef(null);
+  useScrollReveal(root);
+  useEffect(() => () => clearTimeout(copyTimer.current), []);
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText('cvitalerrico@gmail.com');
+      setCopied(true); setCopyError(false);
+      clearTimeout(copyTimer.current);
+      copyTimer.current = setTimeout(() => setCopied(false), 2000);
+    } catch { setCopyError(true); }
+  };
+  return <main ref={root} className="studio-contact inner-motion">
     <aside className="contact-project-invite"><div><h2>Have a project in mind? ♡</h2><p>Share your ideas and preferences for a personalized proposal.</p></div><Link to="/start-project">Start your project <ArrowIcon /></Link></aside>
     <section className="studio-contact-layout" aria-labelledby="contact-page-title">
       <div className="studio-contact-intro">
@@ -23,7 +41,7 @@ export default function ContactPage() {
       </div>
     </section>
     <section className="studio-contact-direct" aria-label="More ways to connect">
-      <a href="mailto:cvitalerrico@gmail.com"><span className="studio-contact-badge" aria-hidden="true">@</span><div><h2>cvitalerrico@gmail.com</h2><p>For projects, collaborations<br />or just to say hi.</p></div></a>
+      <div className="contact-email-card contact-direct-card case-reveal"><span className="studio-contact-badge" aria-hidden="true">@</span><div><button className="contact-copy-email" onClick={copyEmail}>cvitalerrico@gmail.com</button><span className="contact-copy-status" role="status">{copied ? 'Copied ♡' : copyError ? 'Please use Open email below. ♡' : ''}</span><p>For projects, collaborations<br />or just to say hi.</p><a className="contact-open-email" href="mailto:cvitalerrico@gmail.com">Open email ↗</a></div></div>
       <a href="https://www.instagram.com/souraw.us/" target="_blank" rel="noopener noreferrer"><span className="studio-contact-badge" aria-hidden="true">♡</span><div><h2>@souraw.us</h2><p>Sourdough, food &<br />creative content.</p></div></a>
       <a href="https://www.instagram.com/souraw.lab/" target="_blank" rel="noopener noreferrer"><span className="studio-contact-badge" aria-hidden="true">✳</span><div><h2>@souraw.lab</h2><p>Design, creative projects<br />& behind the scenes.</p></div></a>
     </section>
