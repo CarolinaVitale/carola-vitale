@@ -26,10 +26,16 @@ const ProposalPreview = process.env.NODE_ENV === "development"
 const MarProposalPreview = process.env.NODE_ENV === "development"
   ? React.lazy(() => import("./pages/MarProposalPreview")) : null;
 
+const DnaProposalPreview = process.env.NODE_ENV === "development"
+  ? React.lazy(() => import("./pages/DnaProposalPreview")) : null;
+
 function AppContent() {
   const location = useLocation();
   if (process.env.NODE_ENV === "development" && location.pathname === "/proposal-mar") {
     return <React.Suspense fallback={<p>Cargando propuesta…</p>}><MarProposalPreview /></React.Suspense>;
+  }
+  if (process.env.NODE_ENV === "development" && location.pathname === "/proposal-dna") {
+    return <React.Suspense fallback={<p>Cargando propuesta…</p>}><DnaProposalPreview /></React.Suspense>;
   }
   const isResumePage = location.pathname === "/resume";
   if (process.env.NODE_ENV === "development" && location.pathname === "/proposal-preview") {

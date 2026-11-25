@@ -1,0 +1,29 @@
+/* Fit DNA's longer copy on the same five-page MAR template. */
+.dna-proposal .proposal-made-for-you .proposal-service-card h3 { font-size: 28px; }
+.dna-proposal .proposal-made-for-you .proposal-service-card .proposal-deliverables li { font-size: 14px; line-height: 1.45; margin: 4px 0; }
+.dna-proposal .proposal-made-for-you > .proposal-page-content > p:not(.proposal-label):not(.proposal-hand-note) { font-size: 17px; }
+.dna-proposal .proposal-made-for-you .proposal-service-card { padding-top: 10px; padding-bottom: 10px; }
+.dna-proposal .proposal-investment .proposal-prices { margin: 18px 0; }
+.dna-proposal .proposal-investment .proposal-prices td, .dna-proposal .proposal-investment .proposal-prices th { padding: 12px; }
+.dna-proposal .proposal-investment .proposal-payment { margin: 16px 0; }
+.dna-proposal .proposal-investment .proposal-fineprint { font-size: 12px; line-height: 1.5; }
+.dna-proposal .proposal-made-for-you .proposal-note-row { height: 88px; }
+.dna-proposal .proposal-made-for-you .proposal-note-row > img { max-height: 80px; object-fit: contain; }
+.dna-proposal .proposal-made-for-you .proposal-note-loop { height: 40px; }
+/* Accent wrappers are letters, not the decorative heart/arrow spans. */
+.dna-proposal .proposal-service-card h3 .mar-letter,
+.dna-proposal .proposal-service-card h3 .mar-letter > span {
+  font: inherit;
+  color: inherit;
+}
+
+/* DNA cover only: natural lettering and a fine hand-painted underline. */
+.dna-proposal .proposal-cover .proposal-cover-subtitle::after { content: none; }
+.dna-subtitle-brush { display: block; position: absolute; left: 0; bottom: 0; width: 190px; height: 12px; overflow: visible; }
+.dna-subtitle-brush path { fill: none; stroke: var(--pink); stroke-width: 2.8; stroke-linecap: round; }
+.dna-proposal .proposal-cover-note { left: 12px; width: 345px; }
+.dna-proposal .proposal-cover-note .dna-cover-phrase { font: 25px/1.3 Chippie, sans-serif; letter-spacing: .025em; color: var(--blue); transform: none; margin: 4px 0 0; white-space: nowrap; }
+
+.dna-proposal .proposal-made-for-you .proposal-hand-note,
+.dna-proposal .proposal-made-for-you .proposal-hand-note > p { transform: none; line-height: 1.3; }
+.dna-proposal .proposal-prices td:last-child .mar-price-detail { white-space: nowrap; max-width: none; text-align: right; font-size: 12px; }
